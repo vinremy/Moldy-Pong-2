@@ -1,18 +1,24 @@
 export class Tomate extends createjs.Bitmap {
 
-    constructor(chargeur, canvas, raquette1, raquette2, point1, point2, app, pointage1, pointage2) {
-        super(chargeur.getResult('tomate'));
+    constructor(chargeur, canvas, raquette1, raquette2, point1, point2, app, idSkinBalle) {
+
+
+        super(chargeur.getResult(idSkinBalle));
 
 
         this.raquette1 = raquette1;
         this.raquette2 = raquette2;
         this.canvas = canvas;
-        this.point1 = point1;
-        this.point2 = point2;
-        this.app = app;
-        this.pointage1 = pointage1;
-        this.pointage2 = pointage2;
 
+        this.app = app;
+
+        this.idSkinBalle = idSkinBalle;
+
+
+        if (this.idSkinBalle === "tomateMoldy" || this.idSkinBalle === "chouxMoldy" || this.idSkinBalle === "oignonMoldy") {
+            this.scaleX = 0.2;
+            this.scaleY = 0.2;
+        }
 
         this.x = this.canvas.width / 2;
         this.y = this.canvas.height / 2;
@@ -20,10 +26,15 @@ export class Tomate extends createjs.Bitmap {
         this.min = Math.ceil(10);
         this.max = Math.floor(20);
 
+        this.min2 = Math.ceil(0)
+
         this.directionX = Math.floor(Math.random() * Math.floor(this.max - this.min) + this.min) * ((Math.floor(Math.random() - 0.5) * 2) + 1);
-        this.directionY = Math.floor(Math.random() * Math.floor(this.max - this.min) + this.min) * ((Math.floor(Math.random() - 0.5) * 2) + 1);
+        this.directionY = Math.floor(Math.random() * Math.floor(this.max - this.min2) + this.min2) * ((Math.floor(Math.random() - 0.5) * 2) + 1);
 
         createjs.Ticker.addEventListener("tick", this.deplacerBalle.bind(this));
+
+
+
 
 
     }
@@ -43,6 +54,8 @@ export class Tomate extends createjs.Bitmap {
             this.directionX = -this.directionX;
             this.directionY = -this.directionY
 
+
+
         }
 
 
@@ -56,32 +69,13 @@ export class Tomate extends createjs.Bitmap {
         }
 
 
-        //
-
-
         if (this.x <= 0) {
-            console.log(this.point2);
-            // this.point2 += 1;
-
-
-            // this.pointage2.text = this.point2;
-            // this.pointage2.updateCache();
 
 
             this.app.augmenterPointJ2();
 
 
             this.detruire();
-
-            // this.app.stage.removeChild(this);
-            // //
-            // this.directionY = 0;
-            // this.directionX = 0;
-            //
-            // this.x = this.canvas.width/2;
-            // this.y = -100;
-
-            console.log(this.point2)
 
 
         }
@@ -90,34 +84,21 @@ export class Tomate extends createjs.Bitmap {
 
             this.app.augmenterPointJ1();
 
-            console.log(this.point1);
-            // this.point1 += 1;
-            //
-            // this.pointage1.text = this.point1;
-            // this.pointage1.updateCache();
 
             this.detruire();
 
-            // this.directionY = 0;
-            // this.directionX = 0;
-            //
-            // this.x = this.canvas.width/2;
-            // this.y = -100;
-
-            console.log(this.point1)
 
         }
 
     }
 
     detruire() {
-        // this.app.stage.removeChild(this);
 
         this.directionY = 0;
         this.directionX = 0;
 
-        this.x = this.canvas.width/2;
-        this.y = -100;
+        this.x = this.canvas.width / 2;
+        this.y = -500;
     }
 
 

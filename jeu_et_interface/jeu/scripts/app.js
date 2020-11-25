@@ -28,6 +28,8 @@ export class Application {
         this.joueur2Connecte = false;
 
 
+        this.jeuDemarrer = false
+
     }
 
 
@@ -188,7 +190,9 @@ export class Application {
 
         this.stage.addChild(this.raquette1);
 
-        this.surConnection()
+        this.surConnection();
+
+
     }
 
 
@@ -204,19 +208,22 @@ export class Application {
 
     surConnection() {
 
+        if (this.jeuDemarrer === false) {
 
-        if (this.joueur1Connecte === true && this.joueur2Connecte === true) {
 
+            if (this.joueur1Connecte === true && this.joueur2Connecte === true) {
 
-            setInterval(this.lancementJeu.bind(this), 2500);
+                this.jeuDemarrer = true;
+
+                setInterval(this.lancementJeu.bind(this), 2500);
+            }
         }
     }
-
 
     lancementJeu() {
 
 
-        console.log("go")
+      
 
 
         this.skinBalle = Math.floor(Math.random() * Math.floor(6 - 1) + 1);
@@ -287,8 +294,6 @@ export class Application {
         }
 
 
-
-
     }
 
     mouvementJoueur2(e) {
@@ -317,7 +322,6 @@ export class Application {
 
 
         }
-
 
 
     }

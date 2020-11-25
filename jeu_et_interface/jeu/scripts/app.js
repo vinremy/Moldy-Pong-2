@@ -96,7 +96,16 @@ export class Application {
         this.vie_5_joueur2 = new createjs.Bitmap(this.chargeur.getResult('etoile'), true);
 
 
-        this.stage.addChild(this.decor, this.vieJoueur1, this.vieJoueur2, this.vie_1_joueur1, this.vie_2_joueur1, this.vie_3_joueur1, this.vie_4_joueur1, this.vie_5_joueur1, this.vie_1_joueur2, this.vie_2_joueur2, this.vie_3_joueur2, this.vie_4_joueur2, this.vie_5_joueur2);
+
+        this.phoneQr = new createjs.Bitmap(this.chargeur.getResult('phoneQr'), true);
+
+
+        this.stage.addChild(this.decor, this.vieJoueur1, this.vieJoueur2, this.vie_1_joueur1, this.vie_2_joueur1, this.vie_3_joueur1, this.vie_4_joueur1, this.vie_5_joueur1, this.vie_1_joueur2, this.vie_2_joueur2, this.vie_3_joueur2, this.vie_4_joueur2, this.vie_5_joueur2, this.phoneQr);
+
+
+        this.phoneQr.x = 690;
+
+        this.phoneQr.y = 0;
 
 
         this.vieJoueur1.x = 306;
@@ -214,6 +223,8 @@ export class Application {
             if (this.joueur1Connecte === true && this.joueur2Connecte === true) {
 
                 this.jeuDemarrer = true;
+
+                this.stage.removeChild(this.phoneQr);
 
                 setInterval(this.lancementJeu.bind(this), 2500);
             }

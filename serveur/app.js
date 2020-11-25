@@ -69,13 +69,21 @@ function gererNouvelleInterface(socket) {
     interfaces[0] = socket;
     socket.on("mouvement", message => {
       jeux.forEach(jeu => jeu.emit("joueur1", message))
-    })
+    });
+
+      socket.on("connection", message => {
+          jeux.forEach(jeu => jeu.emit("connection1", message))
+      })
 
   } else if (!interfaces[1]) {
     interfaces[1] = socket;
     socket.on("mouvement", message => {
       jeux.forEach(jeu => jeu.emit("joueur2", message))
-    })
+    });
+
+      socket.on("connection", message => {
+          jeux.forEach(jeu => jeu.emit("connection2", message))
+      })
 
   } else {
     interfaces.push(socket);

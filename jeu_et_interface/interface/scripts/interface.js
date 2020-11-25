@@ -18,6 +18,7 @@ export class Interface {
 
 
 
+
     }
 
 
@@ -25,18 +26,29 @@ export class Interface {
     autoriser(e) {
 
         // Vérifier si les événements d'orientation sont disponibles sur cette plateforme
+
+
         if (!window.DeviceOrientationEvent || !window.DeviceOrientationEvent.requestPermission) {
-            alert("Oups! Votre fureteur ne supporte pas la détection d'orientation.");
-            return;
+            // alert("Oups! Votre fureteur ne supporte pas la détection d'orientation.");
+            // return;
+            window.addEventListener('deviceorientation', this.gererOrientation.bind(this));
+            this.socket.emit("connection", {type : "connection"});
+
         }
 
         // Demande de permission à l'usager pour l'utilisation des événements d'orientation
+
+
         DeviceOrientationEvent.requestPermission()
             .then(state => {
                 if (state === 'granted') {
                     window.addEventListener('deviceorientation', this.gererOrientation.bind(this));
+                    this.socket.emit("connection", {type : "connection"});
                 }
             });
+
+
+
 
     }
 

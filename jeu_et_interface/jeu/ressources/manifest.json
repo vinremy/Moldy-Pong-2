@@ -1,11 +1,6 @@
 {
   "manifest": [
 
-    {"id": "fond",  "src": "../ressources/images/fond.jpg"},
-
-
-
-
 
 
     {"id": "decor",  "src": "ressources/images/tableSansBordure.png"},

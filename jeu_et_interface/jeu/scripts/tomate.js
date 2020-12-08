@@ -14,6 +14,8 @@ export class Tomate extends createjs.Bitmap {
 
         this.idSkinBalle = idSkinBalle;
 
+        this.rebond = true
+
 
         if (this.idSkinBalle === "tomateMoldy" || this.idSkinBalle === "chouxMoldy" || this.idSkinBalle === "oignonMoldy") {
             this.scaleX = 0.2;
@@ -51,8 +53,20 @@ export class Tomate extends createjs.Bitmap {
 
         if (this.collision || this.collision2) {
             console.log("collision");
-            this.directionX = -this.directionX;
-            this.directionY = -this.directionY
+
+            if (this.rebond === true){
+                this.directionX = -this.directionX;
+                this.directionY = -this.directionY;
+                this.rebond = false;
+
+                setTimeout( () => {this.rebond = true},300 )
+            }
+
+
+
+
+
+
 
 
 

@@ -1,11 +1,6 @@
 {
   "manifest": [
 
-    {"id": "fond",  "src": "../ressources/images/fond.jpg"},
-
-
-
-
 
 
     {"id": "decor",  "src": "ressources/images/tableSansBordure.png"},
@@ -20,7 +15,10 @@
     {"id": "chouxMoldy",  "src": "ressources/images/chouxMoldy.png"},
     {"id": "oignonMoldy",  "src": "ressources/images/oignonMoldy.png"},
     {"id": "patateMoldy",  "src": "ressources/images/patateMoldy.png"},
-    {"id": "radisMoldy",  "src": "ressources/images/radisMoldy.png"}
+    {"id": "radisMoldy",  "src": "ressources/images/radisMoldy.png"},
+
+
+    {"id": "phoneQr",  "src": "ressources/images/phone.png"}
 
 
   ]

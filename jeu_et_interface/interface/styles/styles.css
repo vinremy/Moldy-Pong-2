@@ -1,16 +1,132 @@
 html, body {
+
   width: 100%;
   height: 100%;
   margin: 0;
-  background-color: black;
-  color: white;
-  font-size: 32px;
-  overflow: hidden;
-  font-family: sans-serif;
+  padding: 0;
+
+  background: url("../ressources/images/tableMobile.png"), no-repeat;
+  background-size: cover;
+
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.containerTout {
+
+  padding: 0;
+  width: 85%;
+  height: 70%;
+
+}
+
+.containerRaquette {
+
+  background-image: linear-gradient(140deg, rgba(126, 176, 0, 1), rgba(173, 228, 33, 1), rgba(239, 255, 200, 1));
+  box-shadow: 10px 15px 10px 0 rgba(47,66,0,0.44);
+
+  width: 100%;
+
+  height: 100%;
+  border-radius: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.logo{
+  width: 50%;
+
+  position: absolute;
+  z-index: 999;
+
+  top: 70px;
+  left: 5px;
+
+  overflow: hidden;
+}
+
+/* Rotation des images de raquettes */
+.raquette {
+  margin: 115px 0 0 43px;
+  transform: rotate(27.44deg);
+
+  overflow: hidden;
+}
+.raquetteRouleau{ width: 35%; }
+.raquetteSpatule{ width: 30%;}
+
+#spatule, #rouleau{ display: none;}
+
 h1 {
-  font-size: 1em;
-  text-align: center;
-  margin: 0.3em;
+  font-size: 3rem;
+  font-family: 'Ranchers', cursive;
+  color: #FFE424;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  /* Contour du texte */
+  text-shadow: -2px 2px 0 #FF8C1E,
+  2px 2px 0 #FF8C1E,
+  2px -2px 0 #FF8C1E,
+  -2px -2px 0 #FF8C1E;
+
+}
+
+/* Détails arrière-plan containerRaquette */
+.maskRaquette{
+  position: absolute;
+
+  transform: rotate(90deg);
+  opacity: 0.16;
+
+  overflow: hidden;
+}
+
+.maskPoele, .maskSpatule{ top: 50px; }
+.maskSpatule{width: 23%;}
+.maskRouleau{
+  width: 32%;
+  top: 30px;
+}
+
+.ombre{
+  position: relative;
+
+  top: 10px;
+
+  width: 110px;
+  height: 21px;
+
+  background: rgba(53,53,54,0.15);
+  filter: blur(3px);
+  border-radius: 50%;
+}
+
+/* lignes carrousel */
+.containerLignes{
+  margin-top: 44px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrousel{
+  margin: 0 20px 0 20px;
+
+  width: 42px;
+  height: 10px;
+
+  border-radius: 50px;
+
+  background: #C2B240;
+  opacity: 0.7;
+  box-shadow: 2px 4px 6px 0 rgba(0,0,0,0.79);
 }

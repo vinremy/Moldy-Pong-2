@@ -26,9 +26,9 @@ export class Tomate extends createjs.Bitmap {
         this.y = this.canvas.height / 2;
 
         this.min = Math.ceil(10);
-        this.max = Math.floor(20);
+        this.max = Math.floor(15);
 
-        this.min2 = Math.ceil(0)
+        this.min2 = Math.ceil(0);
 
         this.directionX = Math.floor(Math.random() * Math.floor(this.max - this.min) + this.min) * ((Math.floor(Math.random() - 0.5) * 2) + 1);
         this.directionY = Math.floor(Math.random() * Math.floor(this.max - this.min2) + this.min2) * ((Math.floor(Math.random() - 0.5) * 2) + 1);

@@ -226,7 +226,7 @@ export class Application {
 
                 this.stage.removeChild(this.phoneQr);
 
-                setInterval(this.lancementJeu.bind(this), 2500);
+                setInterval(this.lancementJeu.bind(this), 1000);
             }
         }
     }

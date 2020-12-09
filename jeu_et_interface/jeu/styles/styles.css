@@ -23,7 +23,9 @@ background-image: url("../ressources/images/fond.png");
 
 #canvas2{
   position: absolute;
-
-bottom: 12.5%;
+margin: 65px auto;
+/*bottom: 12.5%;*/
 }
+
+
 

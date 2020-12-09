@@ -3,12 +3,13 @@
 
 
 
-    {"id": "decor",  "src": "ressources/images/tableSansBordure.png"},
+    {"id": "decor",  "src": "ressources/images/background.png"},
     {"id": "tomate",  "src": "ressources/images/tomate.png"},
     {"id": "poele",  "src": "ressources/images/poele.png"},
     {"id": "joueur1",  "src": "ressources/images/Joueur1.png"},
     {"id": "joueur2",  "src": "ressources/images/Joueur2.png"},
     {"id": "etoile",  "src": "ressources/images/etoile.png"},
+    {"id": "fondJeu",  "src": "ressources/images/fondJeu.jpg"},
 
 
     {"id": "tomateMoldy",  "src": "ressources/images/tomateMoldy.png"},

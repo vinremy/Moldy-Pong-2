@@ -20,3 +20,10 @@ background-image: url("../ressources/images/fond.png");
   justify-content: center;
   align-items: center;
 }
+
+#canvas2{
+  position: absolute;
+
+bottom: 12.5%;
+}
+

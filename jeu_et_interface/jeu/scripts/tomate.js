@@ -1,6 +1,6 @@
 export class Tomate extends createjs.Bitmap {
 
-    constructor(chargeur, canvas, raquette1, raquette2, point1, point2, app, idSkinBalle) {
+    constructor(chargeur, canvas, raquette1, raquette2, point1, point2, app, idSkinBalle, canvasJeu) {
 
 
         super(chargeur.getResult(idSkinBalle));
@@ -9,24 +9,32 @@ export class Tomate extends createjs.Bitmap {
         this.raquette1 = raquette1;
         this.raquette2 = raquette2;
         this.canvas = canvas;
+        this.canvas2 = canvasJeu;
 
         this.app = app;
 
         this.idSkinBalle = idSkinBalle;
 
-        this.rebond = true
+        this.rebond = true;
+
+
 
 
         if (this.idSkinBalle === "tomateMoldy" || this.idSkinBalle === "chouxMoldy" || this.idSkinBalle === "oignonMoldy") {
-            this.scaleX = 0.2;
-            this.scaleY = 0.2;
+            this.scaleX = 0.1;
+            this.scaleY = 0.1;
         }
 
-        this.x = this.canvas.width / 2;
-        this.y = this.canvas.height / 2;
+        else{
+            this.scaleX = 0.5;
+            this.scaleY = 0.5;
+        }
 
-        this.min = Math.ceil(10);
-        this.max = Math.floor(15);
+        this.x = this.canvas2.width / 2;
+        this.y = this.canvas2.height / 2;
+
+        this.min = Math.ceil(5);
+        this.max = Math.floor(10);
 
         this.min2 = Math.ceil(0);
 
@@ -34,7 +42,6 @@ export class Tomate extends createjs.Bitmap {
         this.directionY = Math.floor(Math.random() * Math.floor(this.max - this.min2) + this.min2) * ((Math.floor(Math.random() - 0.5) * 2) + 1);
 
         createjs.Ticker.addEventListener("tick", this.deplacerBalle.bind(this));
-
 
 
 
@@ -54,20 +61,15 @@ export class Tomate extends createjs.Bitmap {
         if (this.collision || this.collision2) {
             console.log("collision");
 
-            if (this.rebond === true){
+            if (this.rebond === true) {
                 this.directionX = -this.directionX;
                 this.directionY = -this.directionY;
                 this.rebond = false;
 
-                setTimeout( () => {this.rebond = true},300 )
+                setTimeout(() => {
+                    this.rebond = true
+                }, 300)
             }
-
-
-
-
-
-
-
 
 
         }
@@ -78,7 +80,7 @@ export class Tomate extends createjs.Bitmap {
         }
 
 
-        if (this.y >= 912) {
+        if (this.y >= 500) {
             this.directionY = -this.directionY
         }
 

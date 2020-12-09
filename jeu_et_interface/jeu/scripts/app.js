@@ -16,7 +16,8 @@ export class Application {
         this.socket.on("joueur2", this.mouvementJoueur2.bind(this));
 
 
-        this.canvas = document.querySelector("canvas");
+        this.canvas = document.getElementById("canvas");
+        this.canvas2 = document.getElementById("canvas2");
 
         this.cadence = 60;
 
@@ -36,7 +37,8 @@ export class Application {
 
 
     initialiser() {
-        this.stage = new createjs.StageGL(this.canvas);
+        this.stage = new createjs.StageGL(this.canvas , {transparent:true});
+        this.stageJeu = new createjs.StageGL(this.canvas2);
 
         createjs.Ticker.addEventListener("tick", this.actualiser.bind(this));
 
@@ -69,6 +71,9 @@ export class Application {
         this.raquette1 = new Raquette(this.chargeur, "poele");
         this.raquette2 = new Raquette(this.chargeur, "poele");
 
+        this.raquette1.scaleX =  0.5;
+        this.raquette1.scaleY =  0.5;
+
         this.ajoutDecor();
         this.jouerMusiqueMenu();
 
@@ -82,6 +87,7 @@ export class Application {
 
 
         this.decor = new createjs.Bitmap(this.chargeur.getResult('decor'), true);
+        this.fondJeu = new createjs.Bitmap(this.chargeur.getResult('fondJeu'), true);
         this.vieJoueur1 = new createjs.Bitmap(this.chargeur.getResult('joueur1'), true);
         this.vieJoueur2 = new createjs.Bitmap(this.chargeur.getResult('joueur2'), true);
 
@@ -102,50 +108,57 @@ export class Application {
         this.phoneQr = new createjs.Bitmap(this.chargeur.getResult('phoneQr'), true);
 
 
-        this.stage.addChild(this.decor, this.vieJoueur1, this.vieJoueur2, this.vie_1_joueur1, this.vie_2_joueur1, this.vie_3_joueur1, this.vie_4_joueur1, this.vie_5_joueur1, this.vie_1_joueur2, this.vie_2_joueur2, this.vie_3_joueur2, this.vie_4_joueur2, this.vie_5_joueur2, this.phoneQr);
+        this.stage.addChild(this.decor, this.vie_1_joueur1, this.vie_2_joueur1, this.vie_3_joueur1, this.vie_4_joueur1, this.vie_5_joueur1, this.vie_1_joueur2, this.vie_2_joueur2, this.vie_3_joueur2, this.vie_4_joueur2, this.vie_5_joueur2);
+
+        //this.vieJoueur1, this.vieJoueur2, ,
+
+        this.stageJeu.addChild(this.fondJeu, this.phoneQr);
 
 
-        this.phoneQr.x = 690;
+        this.phoneQr.scaleX = 0.5;
+        this.phoneQr.scaleY = 0.5;
 
-        this.phoneQr.y = 0;
+        this.phoneQr.x = 425;
+
+        this.phoneQr.y = 30;
 
 
         this.vieJoueur1.x = 306;
         this.vieJoueur2.x = 1212;
 
-        this.vieJoueur1.scaleX = 0.5;
-        this.vieJoueur1.scaleY = 0.5;
+        this.vieJoueur1.scaleX = 0.4;
+        this.vieJoueur1.scaleY = 0.2;
 
         this.vieJoueur2.scaleX = 0.5;
         this.vieJoueur2.scaleY = 0.5;
 
-        this.vie_1_joueur1.scaleX = 0.5;
-        this.vie_1_joueur1.scaleY = 0.5;
+        this.vie_1_joueur1.scaleX = 0.3;
+        this.vie_1_joueur1.scaleY = 0.3;
 
-        this.vie_2_joueur1.scaleX = 0.5;
-        this.vie_2_joueur1.scaleY = 0.5;
+        this.vie_2_joueur1.scaleX = 0.3;
+        this.vie_2_joueur1.scaleY = 0.3;
 
-        this.vie_3_joueur1.scaleX = 0.5;
-        this.vie_3_joueur1.scaleY = 0.5;
+        this.vie_3_joueur1.scaleX = 0.3;
+        this.vie_3_joueur1.scaleY = 0.3;
 
-        this.vie_4_joueur1.scaleX = 0.5;
-        this.vie_4_joueur1.scaleY = 0.5;
+        this.vie_4_joueur1.scaleX = 0.3;
+        this.vie_4_joueur1.scaleY = 0.3;
 
-        this.vie_5_joueur1.scaleX = 0.5;
-        this.vie_5_joueur1.scaleY = 0.5;
+        this.vie_5_joueur1.scaleX = 0.3;
+        this.vie_5_joueur1.scaleY = 0.3;
 
-        this.vie_1_joueur1.y = 170;
-        this.vie_2_joueur1.y = 170;
-        this.vie_3_joueur1.y = 170;
-        this.vie_4_joueur1.y = 170;
-        this.vie_5_joueur1.y = 170;
+        this.vie_1_joueur1.y = 105;
+        this.vie_2_joueur1.y = 105;
+        this.vie_3_joueur1.y = 105;
+        this.vie_4_joueur1.y = 105;
+        this.vie_5_joueur1.y = 105;
 
 
-        this.vie_1_joueur1.x = 330;
-        this.vie_2_joueur1.x = 400;
-        this.vie_3_joueur1.x = 470;
-        this.vie_4_joueur1.x = 540;
-        this.vie_5_joueur1.x = 610;
+        this.vie_1_joueur1.x = 400;
+        this.vie_2_joueur1.x = 440;
+        this.vie_3_joueur1.x = 480;
+        this.vie_4_joueur1.x = 520;
+        this.vie_5_joueur1.x = 560;
 
 
         this.vie_1_joueur1.vivant = true;
@@ -157,33 +170,33 @@ export class Application {
 
         //joueur 2
 
-        this.vie_1_joueur2.scaleX = 0.5;
-        this.vie_1_joueur2.scaleY = 0.5;
+        this.vie_1_joueur2.scaleX = 0.3;
+        this.vie_1_joueur2.scaleY = 0.3;
 
-        this.vie_2_joueur2.scaleX = 0.5;
-        this.vie_2_joueur2.scaleY = 0.5;
+        this.vie_2_joueur2.scaleX = 0.3;
+        this.vie_2_joueur2.scaleY = 0.3;
 
-        this.vie_3_joueur2.scaleX = 0.5;
-        this.vie_3_joueur2.scaleY = 0.5;
+        this.vie_3_joueur2.scaleX = 0.3;
+        this.vie_3_joueur2.scaleY = 0.3;
 
-        this.vie_4_joueur2.scaleX = 0.5;
-        this.vie_4_joueur2.scaleY = 0.5;
+        this.vie_4_joueur2.scaleX = 0.3;
+        this.vie_4_joueur2.scaleY = 0.3;
 
-        this.vie_5_joueur2.scaleX = 0.5;
-        this.vie_5_joueur2.scaleY = 0.5;
+        this.vie_5_joueur2.scaleX = 0.3;
+        this.vie_5_joueur2.scaleY = 0.3;
 
-        this.vie_1_joueur2.y = 170;
-        this.vie_2_joueur2.y = 170;
-        this.vie_3_joueur2.y = 170;
-        this.vie_4_joueur2.y = 170;
-        this.vie_5_joueur2.y = 170;
+        this.vie_1_joueur2.y = 105;
+        this.vie_2_joueur2.y = 105;
+        this.vie_3_joueur2.y = 105;
+        this.vie_4_joueur2.y = 105;
+        this.vie_5_joueur2.y = 105;
 
 
-        this.vie_1_joueur2.x = 1230;
-        this.vie_2_joueur2.x = 1300;
-        this.vie_3_joueur2.x = 1370;
-        this.vie_4_joueur2.x = 1440;
-        this.vie_5_joueur2.x = 1510;
+        this.vie_1_joueur2.x = 720;
+        this.vie_2_joueur2.x = 760;
+        this.vie_3_joueur2.x = 800;
+        this.vie_4_joueur2.x = 840;
+        this.vie_5_joueur2.x = 880;
 
 
         this.vie_1_joueur2.vivant = true;
@@ -235,7 +248,7 @@ export class Application {
                 }, 42578);
             }
 
-        console.log(i)
+
     }
 
     arretMusique(){
@@ -248,12 +261,12 @@ export class Application {
     ajoutRaquette1() {
 
 
-        this.stage.addChild(this.raquette1);
+        this.stageJeu.addChild(this.raquette1);
 
         this.surConnection();
 
         this.arretMusique();
-        this.jouerMusiqueJeu();
+
     }
 
 
@@ -261,7 +274,7 @@ export class Application {
 
 
         // this.raquette1 = new Raquette(this.chargeur);
-        this.stage.addChild(this.raquette2);
+        this.stageJeu.addChild(this.raquette2);
         this.raquette2.x = this.canvas.width - 120;
 
         this.surConnection()
@@ -275,12 +288,23 @@ export class Application {
             if (this.joueur1Connecte === true && this.joueur2Connecte === true) {
 
                 this.jeuDemarrer = true;
-
+                this.jouerMusiqueJeu();
                 this.stage.removeChild(this.phoneQr);
 
 
-                setInterval(this.lancementJeu.bind(this), 2500);
+                setInterval(this.lancementJeu.bind(this), 5000);
             }
+
+
+
+                //
+                // this.jeuDemarrer = true;
+                // this.jouerMusiqueJeu();
+                // this.stage.removeChild(this.phoneQr);
+                //
+                //
+                // setInterval(this.lancementJeu.bind(this), 5000);
+
         }
     }
 
@@ -314,9 +338,9 @@ export class Application {
         }
 
 
-        this.balle = new Tomate(this.chargeur, this.canvas, this.raquette1, this.raquette2, this.pointsJ1, this.pointsJ2, this, this.idSkinBalle);
+        this.balle = new Tomate(this.chargeur, this.canvas, this.raquette1, this.raquette2, this.pointsJ1, this.pointsJ2, this, this.idSkinBalle, this.canvas2);
 
-        this.stage.addChild(this.balle);
+        this.stageJeu.addChild(this.balle);
 
 
     }
@@ -324,6 +348,9 @@ export class Application {
 
     actualiser(e) {
         this.stage.update(e);
+        this.stageJeu.update(e);
+
+
 
     }
 
@@ -336,7 +363,7 @@ export class Application {
 
         if (e.beta <= -45) {
 
-            this.raquette1.y = 760
+            this.raquette1.y = 460
 
 
         }
@@ -349,7 +376,7 @@ export class Application {
         if (e.beta >= -45 && e.beta <= 45) {
 
 
-            this.raquette1.y = (-(e.beta) + 45) / 100 * this.canvas.height;
+            this.raquette1.y = (-(e.beta) + 45) / 100 * this.canvas2.height;
 
 
         }
@@ -366,7 +393,7 @@ export class Application {
         if (e.beta <= -45) {
 
 
-            this.raquette2.y = 760
+            this.raquette2.y = 460
 
 
         }
@@ -379,7 +406,7 @@ export class Application {
         if (e.beta >= -45 && e.beta <= 45) {
 
 
-            this.raquette2.y = (-(e.beta) + 45) / 100 * this.canvas.height;
+            this.raquette2.y = (-(e.beta) + 45) / 100 * this.canvas2.height;
 
 
         }

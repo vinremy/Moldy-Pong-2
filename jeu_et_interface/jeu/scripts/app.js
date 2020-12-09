@@ -26,6 +26,8 @@ export class Application {
 
         this.joueur1Connecte = false;
         this.joueur2Connecte = false;
+        this.musiqueBefore = null;
+        this.musiqueLoop = null;
 
 
         this.jeuDemarrer = false
@@ -68,6 +70,7 @@ export class Application {
         this.raquette2 = new Raquette(this.chargeur, "poele");
 
         this.ajoutDecor();
+        this.jouerMusiqueMenu();
 
 
         // this.serveur = new Serveur(this.raquette1, this.raquette2);
@@ -94,7 +97,6 @@ export class Application {
         this.vie_3_joueur2 = new createjs.Bitmap(this.chargeur.getResult('etoile'), true);
         this.vie_4_joueur2 = new createjs.Bitmap(this.chargeur.getResult('etoile'), true);
         this.vie_5_joueur2 = new createjs.Bitmap(this.chargeur.getResult('etoile'), true);
-
 
 
         this.phoneQr = new createjs.Bitmap(this.chargeur.getResult('phoneQr'), true);
@@ -193,7 +195,56 @@ export class Application {
 
     }
 
+    //---------------------------Musiques---------------------------//
+    jouerMusiqueMenu() {
 
+        this.musiqueBefore = createjs.Sound.play("musiqueMenu_before");
+        this.musiqueBefore.play();
+        setTimeout(() => {
+            this.musiqueLoop = createjs.Sound.play("musiqueMenu_loop", {loop: -1});
+        }, 9121);
+
+    }
+
+    jouerMusiqueFin() {
+
+        let i = Math.ceil(Math.random() * 2)
+
+        this.musiqueLoop = createjs.Sound.play("musiqueFin"+ i +"_loop", {loop: -1});
+        this.musiqueLoop.play();
+
+        console.log(i)
+
+    }
+
+    jouerMusiqueJeu() {
+
+        let i = Math.ceil(Math.random() * 2)
+
+            this.musiqueBefore = createjs.Sound.play("musiqueBattle"+ i +"_before");
+            this.musiqueBefore.play();
+
+            if (i === 1){
+                setTimeout(() => {
+                    this.musiqueLoop = createjs.Sound.play("musiqueBattle"+ i +"_loop", {loop: -1});
+                }, 33294);
+            }
+            else if (i === 2){
+                setTimeout(() => {
+                    this.musiqueLoop = createjs.Sound.play("musiqueBattle"+ i +"_loop", {loop: -1});
+                }, 42578);
+            }
+
+        console.log(i)
+    }
+
+    arretMusique(){
+        this.musiqueLoop.stop();
+        this.musiqueBefore.stop();
+    }
+
+
+    //------------------------------------------------------//
     ajoutRaquette1() {
 
 
@@ -201,7 +252,8 @@ export class Application {
 
         this.surConnection();
 
-
+        this.arretMusique();
+        this.jouerMusiqueJeu();
     }
 
 
@@ -226,15 +278,13 @@ export class Application {
 
                 this.stage.removeChild(this.phoneQr);
 
-                setInterval(this.lancementJeu.bind(this), 1000);
+
+                setInterval(this.lancementJeu.bind(this), 2500);
             }
         }
     }
 
     lancementJeu() {
-
-
-      
 
 
         this.skinBalle = Math.floor(Math.random() * Math.floor(6 - 1) + 1);
@@ -345,29 +395,22 @@ export class Application {
             this.vie_5_joueur1.vivant = false;
             this.stage.removeChild(this.vie_5_joueur1)
 
-        }
-
-        else if (this.vie_4_joueur1.vivant === true) {
+        } else if (this.vie_4_joueur1.vivant === true) {
             this.vie_4_joueur1.vivant = false;
             this.stage.removeChild(this.vie_4_joueur1)
-        }
-
-        else if (this.vie_3_joueur1.vivant === true) {
+        } else if (this.vie_3_joueur1.vivant === true) {
             this.vie_3_joueur1.vivant = false;
             this.stage.removeChild(this.vie_3_joueur1)
-        }
-
-
-        else if (this.vie_2_joueur1.vivant === true) {
+        } else if (this.vie_2_joueur1.vivant === true) {
             this.vie_2_joueur1.vivant = false;
             this.stage.removeChild(this.vie_2_joueur1)
-        }
-
-        else if (this.vie_1_joueur1.vivant === true) {
+        } else if (this.vie_1_joueur1.vivant === true) {
             this.vie_1_joueur1.vivant = false;
             this.stage.removeChild(this.vie_1_joueur1)
 
             // appeler fin
+            this.arretMusique();
+            this.jouerMusiqueFin();
         }
 
 
@@ -380,29 +423,22 @@ export class Application {
             this.vie_5_joueur2.vivant = false;
             this.stage.removeChild(this.vie_5_joueur2)
 
-        }
-
-        else if (this.vie_4_joueur2.vivant === true) {
+        } else if (this.vie_4_joueur2.vivant === true) {
             this.vie_4_joueur2.vivant = false;
             this.stage.removeChild(this.vie_4_joueur2)
-        }
-
-        else if (this.vie_3_joueur2.vivant === true) {
+        } else if (this.vie_3_joueur2.vivant === true) {
             this.vie_3_joueur2.vivant = false;
             this.stage.removeChild(this.vie_3_joueur2)
-        }
-
-
-        else if (this.vie_2_joueur2.vivant === true) {
+        } else if (this.vie_2_joueur2.vivant === true) {
             this.vie_2_joueur2.vivant = false;
             this.stage.removeChild(this.vie_2_joueur2)
-        }
-
-        else if (this.vie_1_joueur2.vivant === true) {
+        } else if (this.vie_1_joueur2.vivant === true) {
             this.vie_1_joueur2.vivant = false;
             this.stage.removeChild(this.vie_1_joueur2)
 
             // appeler fin
+            this.arretMusique();
+            this.jouerMusiqueFin();
         }
 
 

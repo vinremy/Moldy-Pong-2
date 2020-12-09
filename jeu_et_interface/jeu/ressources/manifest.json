@@ -18,6 +18,16 @@
     {"id": "radisMoldy",  "src": "ressources/images/radisMoldy.png"},
 
 
+    {"id": "musiqueMenu_before",  "src": "ressources/sons/menuMusic_before.ogg"},
+    {"id": "musiqueMenu_loop",  "src": "ressources/sons/menuMusic_loop.ogg"},
+    {"id": "musiqueBattle1_before",  "src": "ressources/sons/battleMusic1_before.ogg"},
+    {"id": "musiqueBattle1_loop",  "src": "ressources/sons/battleMusic1_loop.ogg"},
+    {"id": "musiqueBattle2_before",  "src": "ressources/sons/battleMusic2_before.ogg"},
+    {"id": "musiqueBattle2_loop",  "src": "ressources/sons/battleMusic2_loop.ogg"},
+    {"id": "musiqueFin1_loop",  "src": "ressources/sons/winMusic1_loop.ogg"},
+    {"id": "musiqueFin2_loop",  "src": "ressources/sons/winMusic2_loop.ogg"},
+
+
     {"id": "phoneQr",  "src": "ressources/images/phone.png"}
 
 

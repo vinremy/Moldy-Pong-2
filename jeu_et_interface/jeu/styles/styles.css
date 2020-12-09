@@ -13,12 +13,14 @@ html, body {
 }
 
 #fond{
-background-image: url("../ressources/images/fond.png");
+background: url("../ressources/images/fond.png" ) top/cover;
   width: 1920px;
   height: 1080px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+
 }
 
 #canvas2{

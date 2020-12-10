@@ -54,8 +54,6 @@ export class Application {
         this.chargeur.addEventListener('error', this.interrompre);
         this.chargeur.addEventListener('complete', this.demarrer.bind(this));
 
-        window.addEventListener("click", this.jouerFrappe.bind(this))
-
         this.pointsJ1 = 0;
         this.pointsJ2 = 0;
 
@@ -76,8 +74,8 @@ export class Application {
         this.raquette1.scaleY = 0.5;
 
         this.ajoutDecor();
-        //this.jouerMusiqueMenu();
-        this.jouerMusiqueJeu();
+        this.jouerMusiqueMenu();
+        //this.jouerMusiqueJeu();
 
 
         // this.serveur = new Serveur(this.raquette1, this.raquette2);

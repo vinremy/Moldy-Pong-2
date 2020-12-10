@@ -37,7 +37,7 @@ export class Application {
 
 
     initialiser() {
-        this.stage = new createjs.StageGL(this.canvas , {transparent:true});
+        this.stage = new createjs.StageGL(this.canvas, {transparent: true});
         this.stageJeu = new createjs.StageGL(this.canvas2);
 
         createjs.Ticker.addEventListener("tick", this.actualiser.bind(this));
@@ -54,6 +54,7 @@ export class Application {
         this.chargeur.addEventListener('error', this.interrompre);
         this.chargeur.addEventListener('complete', this.demarrer.bind(this));
 
+        window.addEventListener("click", this.jouerFrappe.bind(this))
 
         this.pointsJ1 = 0;
         this.pointsJ2 = 0;
@@ -71,11 +72,12 @@ export class Application {
         this.raquette1 = new Raquette(this.chargeur, "poele");
         this.raquette2 = new Raquette(this.chargeur, "poele");
 
-        this.raquette1.scaleX =  0.5;
-        this.raquette1.scaleY =  0.5;
+        this.raquette1.scaleX = 0.5;
+        this.raquette1.scaleY = 0.5;
 
         this.ajoutDecor();
-        this.jouerMusiqueMenu();
+        //this.jouerMusiqueMenu();
+        this.jouerMusiqueJeu();
 
 
         // this.serveur = new Serveur(this.raquette1, this.raquette2);
@@ -213,9 +215,14 @@ export class Application {
 
         this.musiqueBefore = createjs.Sound.play("musiqueMenu_before");
         this.musiqueBefore.play();
+        this.musiqueBefore.volume = 0.4;
+
         setTimeout(() => {
             this.musiqueLoop = createjs.Sound.play("musiqueMenu_loop", {loop: -1});
+            this.musiqueLoop.volume = 0.4;
         }, 9121);
+
+        this.musiqueBefore.volume = 0.4;
 
     }
 
@@ -223,10 +230,9 @@ export class Application {
 
         let i = Math.ceil(Math.random() * 2)
 
-        this.musiqueLoop = createjs.Sound.play("musiqueFin"+ i +"_loop", {loop: -1});
+        this.musiqueLoop = createjs.Sound.play("musiqueFin" + i + "_loop", {loop: -1});
         this.musiqueLoop.play();
-
-        console.log(i)
+        this.musiqueLoop.volume = 0.4;
 
     }
 
@@ -234,26 +240,54 @@ export class Application {
 
         let i = Math.ceil(Math.random() * 2)
 
-            this.musiqueBefore = createjs.Sound.play("musiqueBattle"+ i +"_before");
-            this.musiqueBefore.play();
+        this.musiqueBefore = createjs.Sound.play("musiqueBattle" + i + "_before");
+        this.musiqueBefore.play();
+        this.musiqueBefore.volume = 0.30;
 
-            if (i === 1){
-                setTimeout(() => {
-                    this.musiqueLoop = createjs.Sound.play("musiqueBattle"+ i +"_loop", {loop: -1});
-                }, 33294);
-            }
-            else if (i === 2){
-                setTimeout(() => {
-                    this.musiqueLoop = createjs.Sound.play("musiqueBattle"+ i +"_loop", {loop: -1});
-                }, 42578);
-            }
+        if (i === 1) {
+            setTimeout(() => {
+                this.musiqueLoop = createjs.Sound.play("musiqueBattle" + i + "_loop", {loop: -1});
+                this.musiqueLoop.volume = 0.4;
+            }, 33294);
+        } else if (i === 2) {
+            setTimeout(() => {
+                this.musiqueLoop = createjs.Sound.play("musiqueBattle" + i + "_loop", {loop: -1});
+                this.musiqueLoop.volume = 0.4;
+            }, 42578);
+        }
 
 
     }
 
-    arretMusique(){
+    arretMusique() {
         this.musiqueLoop.stop();
         this.musiqueBefore.stop();
+    }
+
+
+    //---------------------------SFX---------------------------//
+
+    jouerFrappe() {
+
+        let h = Math.ceil(Math.random() * 5);
+        setTimeout(() => {
+            createjs.Sound.play("foodHit" + h);
+        }, 100)
+
+
+        let w = Math.ceil(Math.random() * 5)
+        createjs.Sound.play("woosh" + w);
+
+        //console.log(w, h)
+    }
+
+    jouerManque() {
+        let s = Math.ceil(Math.random() * 5)
+        createjs.Sound.play("foodSquish" + s);
+
+        let t = Math.ceil(Math.random() * 3)
+        createjs.Sound.play("tableHit" + t);
+
     }
 
 
@@ -296,14 +330,13 @@ export class Application {
             }
 
 
-
-                //
-                // this.jeuDemarrer = true;
-                // this.jouerMusiqueJeu();
-                // this.stage.removeChild(this.phoneQr);
-                //
-                //
-                // setInterval(this.lancementJeu.bind(this), 5000);
+            //
+            // this.jeuDemarrer = true;
+            // this.jouerMusiqueJeu();
+            // this.stage.removeChild(this.phoneQr);
+            //
+            //
+            // setInterval(this.lancementJeu.bind(this), 5000);
 
         }
     }
@@ -349,8 +382,6 @@ export class Application {
     actualiser(e) {
         this.stage.update(e);
         this.stageJeu.update(e);
-
-
 
     }
 

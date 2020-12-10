@@ -29,6 +29,29 @@
     {"id": "musiqueFin2_loop",  "src": "ressources/sons/winMusic2_loop.ogg"},
 
 
+    {"id": "foodHit1",  "src": "ressources/sons/sfx/foodHit1.ogg"},
+    {"id": "foodHit2",  "src": "ressources/sons/sfx/foodHit2.ogg"},
+    {"id": "foodHit3",  "src": "ressources/sons/sfx/foodHit3.ogg"},
+    {"id": "foodHit4",  "src": "ressources/sons/sfx/foodHit4.ogg"},
+    {"id": "foodHit5",  "src": "ressources/sons/sfx/foodHit5.ogg"},
+
+    {"id": "woosh1",  "src": "ressources/sons/sfx/woosh-01.ogg"},
+    {"id": "woosh2",  "src": "ressources/sons/sfx/woosh-02.ogg"},
+    {"id": "woosh3",  "src": "ressources/sons/sfx/woosh-03.ogg"},
+    {"id": "woosh4",  "src": "ressources/sons/sfx/woosh-04.ogg"},
+    {"id": "woosh5",  "src": "ressources/sons/sfx/woosh-05.ogg"},
+
+    {"id": "foodSquish1",  "src": "ressources/sons/sfx/foodSquish-01.ogg"},
+    {"id": "foodSquish2",  "src": "ressources/sons/sfx/foodSquish-02.ogg"},
+    {"id": "foodSquish5",  "src": "ressources/sons/sfx/foodSquish-05.ogg"},
+    {"id": "foodSquish3",  "src": "ressources/sons/sfx/foodSquish-03.ogg"},
+    {"id": "foodSquish4",  "src": "ressources/sons/sfx/foodSquish-04.ogg"},
+
+    {"id": "tableHit1",  "src": "ressources/sons/sfx/tableHit-01.ogg"},
+    {"id": "tableHit2",  "src": "ressources/sons/sfx/tableHit-02.ogg"},
+    {"id": "tableHit3",  "src": "ressources/sons/sfx/tableHit-03.ogg"},
+
+
     {"id": "phoneQr",  "src": "ressources/images/phone.png"}
 
 

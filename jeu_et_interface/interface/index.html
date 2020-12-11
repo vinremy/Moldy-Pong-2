@@ -1,124 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Interface mobile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../interface/styles/styles.css">
-  <link rel="stylesheet" href="styles/styles.css">
+    <title>Interface mobile</title>
 
-  <script src="bibliotheques/socket.io.js"> </script>
-  <script type="module">
-    import {Interface} from "./scripts/interface.js";
-    new Interface();
-  </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../interface/styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="module">
+        import {Interface} from "./scripts/interface.js";
 
+        new Interface();
+    </script>
 </head>
+
 <body>
-
+<!-- Image de fond -->
 <div class="fond"></div>
-
 <div class="containerTout">
-  <img class="logo" src="../jeu/ressources/images/logo.png" alt="logo Moldy Pong">
+    <!-- Logo du jeu -->
+    <img class="logo" src="../jeu/ressources/images/logo.png" alt="logo Moldy Pong">
+    <!-- Caroussel -->
+    <section class="carousel, containerToutSlide" aria-label="Gallery">
+        <ol class="carousel__viewport">
+            <li id="carousel__slide1"
+                tabindex="0"
+                class="carousel__slide">
+                <!-- Raquette Poele -->
+                <div class="containerRaquette" id="poele">
+                    <img class="maskRaquette maskPoele" src="../jeu/ressources/images/poele.png" alt="raquette poele">
+                    <img class="raquette" src="../jeu/ressources/images/poele.png" alt="raquette poele">
+                    <div class="ombre"></div>
+                    <h1>Choisir</h1>
+                </div>
 
-  <section class="carousel, containerToutSlide" aria-label="Gallery">
-    <ol class="carousel__viewport">
-      <li id="carousel__slide1"
-          tabindex="0"
-          class="carousel__slide">
+                <div class="carousel__snapper">
+                    <a href="#carousel__slide3"
+                       class="carousel__prev">Go to last slide</a>
+                    <a href="#carousel__slide2"
+                       class="carousel__next">Go to next slide</a>
+                </div>
+            </li>
+            <!-- Raquette Rouleau -->
+            <li id="carousel__slide2"
+                tabindex="0"
+                class="carousel__slide">
 
-        <div class="containerRaquette" id="poele">
-          <img class="maskRaquette maskPoele" src="../jeu/ressources/images/poele.png">
-          <img class="raquette" src="../jeu/ressources/images/poele.png" alt="raquette 1">
-          <div class="ombre"></div>
-          <h1>Choisir</h1>
-        </div>
+                <div class="containerRaquette" id="rouleau">
+                    <img class="maskRaquette maskRouleau" src="../jeu/ressources/images/rouleauMobile.png"
+                         alt="raquette rouleau">
+                    <img class="raquette raquetteRouleau" src="../jeu/ressources/images/rouleauMobile.png"
+                         alt="raquette rouleau">
+                    <div class="ombre"></div>
+                    <h1>Choisir</h1>
+                </div>
 
-        <div class="carousel__snapper">
-          <a href="#carousel__slide3"
-             class="carousel__prev">Go to last slide</a>
-          <a href="#carousel__slide2"
-             class="carousel__next">Go to next slide</a>
-        </div>
-      </li>
-      <li id="carousel__slide2"
-          tabindex="0"
-          class="carousel__slide">
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide1"
+                   class="carousel__prev">Go to previous slide</a>
+                <a href="#carousel__slide3"
+                   class="carousel__next">Go to next slide</a>
+            </li>
+            <!-- Raquette Spatule -->
+            <li id="carousel__slide3"
+                tabindex="0"
+                class="carousel__slide">
 
-          <div class="containerRaquette" id="rouleau">
-            <img class="maskRaquette maskRouleau" src="../jeu/ressources/images/rouleauMobile.png">
-            <img class="raquette raquetteRouleau" src="../jeu/ressources/images/rouleauMobile.png" alt="raquette 2">
-            <div class="ombre"></div>
-            <h1>Choisir</h1>
-          </div>
+                <div class="containerRaquette" id="spatule">
+                    <img class="maskRaquette maskSpatule" src="../jeu/ressources/images/spatuleMobile.png"
+                         alt="raquette spatule">
+                    <img class="spatule raquetteSpatule" src="../jeu/ressources/images/spatuleMobile.png"
+                         alt="raquette spatule">
+                    <div class="ombre"></div>
+                    <h1>Choisir</h1>
+                </div>
 
-        <div class="carousel__snapper"></div>
-        <a href="#carousel__slide1"
-           class="carousel__prev">Go to previous slide</a>
-        <a href="#carousel__slide3"
-           class="carousel__next">Go to next slide</a>
-      </li>
-      <li id="carousel__slide3"
-          tabindex="0"
-          class="carousel__slide">
-        <div class="carousel__snapper"></div>
-        <a href="#carousel__slide2"
-           class="carousel__prev">Go to previous slide</a>
-        <a href="#carousel__slide1"
-           class="carousel__next">Go to next slide</a>
-      </li>
-    </ol>
-    <aside class="carousel__navigation">
-      <ol class="carousel__navigation-list">
-        <li class="carousel__navigation-item">
-          <a href="#carousel__slide1"
-             class="carousel__navigation-button">Go to slide 1</a>
-        </li>
-        <li class="carousel__navigation-item">
-          <a href="#carousel__slide2"
-             class="carousel__navigation-button">Go to slide 2</a>
-        </li>
-        <li class="carousel__navigation-item">
-          <a href="#carousel__slide3"
-             class="carousel__navigation-button">Go to slide 3</a>
-        </li>
-      </ol>
-    </aside>
-  </section>
-  <div class="fond"></div>
-
-<!--  <div class="containerRaquette" id="poele">-->
-<!--    <img class="maskRaquette maskPoele" src="../jeu/ressources/images/poele.png">-->
-<!--    <img class="raquette" src="../jeu/ressources/images/poele.png" alt="raquette 1">-->
-<!--    <div class="ombre"></div>-->
-<!--    <h1>Choisir</h1>-->
-<!--  </div>-->
-
-<!--  <div class="containerRaquette" id="rouleau">-->
-<!--    <img class="maskRaquette maskRouleau" src="../jeu/ressources/images/rouleauMobile.png">-->
-<!--    <img class="raquette raquetteRouleau" src="../jeu/ressources/images/rouleauMobile.png" alt="raquette 2">-->
-<!--    <div class="ombre"></div>-->
-<!--    <h1>Choisir</h1>-->
-<!--  </div>-->
-
-<!--  <div class="containerRaquette" id="spatule">-->
-<!--    <img class="maskRaquette maskSpatule" src="../jeu/ressources/images/spatuleMobile.png">-->
-<!--    <img class="raquette raquetteSpatule" src="../jeu/ressources/images/spatuleMobile.png" alt="raquette 3">-->
-<!--    <div class="ombre"></div>-->
-<!--    <h1>Choisir</h1>-->
-<!--    <button>AUTORISER ORIENTATION</button>-->
-<!--  </div>-->
-
-<!--  <div class="containerLignes">-->
-<!--    <div class="carrousel"></div>-->
-<!--    <div class="carrousel"></div>-->
-<!--    <div class="carrousel"></div>-->
-<!--  </div>-->
+                <div class="carousel__snapper"></div>
+                <a href="#carousel__slide2"
+                   class="carousel__prev">Go to previous slide</a>
+                <a href="#carousel__slide1"
+                   class="carousel__next">Go to next slide</a>
+            </li>
+        </ol>
+    </section>
 </div>
-
 </body>
 </html>

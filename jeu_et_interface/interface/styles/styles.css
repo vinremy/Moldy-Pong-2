@@ -1,3 +1,6 @@
+/*----------------------------------------*/
+/* General
+/*----------------------------------------*/
 html, body {
 
     width: 100%;
@@ -14,6 +17,10 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+
+/*----------------------------------------*/
+/* Caroussel
+/*----------------------------------------*/
 
 @keyframes tonext {
     75% {
@@ -98,10 +105,6 @@ ol, li {
 
 .carousel__viewport {
     position: absolute;
-    /*top: 0;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
-    /*left: 0;*/
     display: flex;
     overflow-x: scroll;
     counter-reset: item;
@@ -116,8 +119,6 @@ ol, li {
     position: relative;
     flex: 0 0 100%;
     width: 100%;
-    /*width: 85%;*/
-    /*height: 70%;*/
     background: transparent;
     counter-increment: item;
 }
@@ -126,19 +127,7 @@ ol, li {
     background: transparent;
 }
 
-.carousel__slide:before {
-    content: counter(item);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -40%, 70px);
-    color: #fff;
-    font-size: 2em;
-}
-
 .carousel__snapper {
-    /*position: absolute;*/
-
     top: 0;
     left: 0;
     width: 100%;
@@ -165,95 +154,94 @@ ol, li {
     }
 }
 
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
-    animation-name: none;
-}
+/*.carousel:hover .carousel__snapper,*/
+/*.carousel:focus-within .carousel__snapper {*/
+/*    animation-name: none;*/
+/*}*/
 
-.carousel__navigation {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-}
+/*.carousel__navigation {*/
+/*    position: absolute;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    text-align: center;*/
+/*}*/
 
-.carousel__navigation-list,
-.carousel__navigation-item {
-    display: inline-block;
-}
+/*.carousel__navigation-list,*/
+/*.carousel__navigation-item {*/
+/*    display: inline-block;*/
+/*}*/
 
-.carousel__navigation-button {
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    /*background-color: #333;*/
-    background-clip: content-box;
-    border: 0.25rem solid transparent;
-    border-radius: 50%;
-    font-size: 0;
-    transition: transform 0.1s;
-}
+/*.carousel__navigation-button {*/
+/*    display: inline-block;*/
+/*    width: 1.5rem;*/
+/*    height: 1.5rem;*/
+/*    background-clip: content-box;*/
+/*    border: 0.25rem solid transparent;*/
+/*    border-radius: 50%;*/
+/*    font-size: 0;*/
+/*    transition: transform 0.1s;*/
+/*}*/
 
-.carousel::before,
-.carousel::after,
-.carousel__prev,
-.carousel__next {
-    position: absolute;
-    top: 0;
-    margin-top: 37.5%;
-    width: 4rem;
-    height: 4rem;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    font-size: 0;
-    outline: 0;
-}
+/*.carousel::before,*/
+/*.carousel::after,*/
+/*.carousel__prev,*/
+/*.carousel__next {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    margin-top: 37.5%;*/
+/*    width: 4rem;*/
+/*    height: 4rem;*/
+/*    transform: translateY(-50%);*/
+/*    border-radius: 50%;*/
+/*    font-size: 0;*/
+/*    outline: 0;*/
+/*}*/
 
-.carousel::before,
-.carousel__prev {
-    left: -1rem;
-}
+/*.carousel::before,*/
+/*.carousel__prev {*/
+/*    left: -1rem;*/
+/*}*/
 
-.carousel::after,
-.carousel__next {
-    right: -1rem;
-}
+/*.carousel::after,*/
+/*.carousel__next {*/
+/*    right: -1rem;*/
+/*}*/
 
-.carousel::before,
-.carousel::after {
-    content: '';
-    z-index: 1;
-    /*background-color: #333;*/
-    background-size: 1.5rem 1.5rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    color: #fff;
-    font-size: 2.5rem;
-    line-height: 4rem;
-    text-align: center;
-    pointer-events: none;
-}
+/*.carousel::before,*/
+/*.carousel::after {*/
+/*    content: '';*/
+/*    z-index: 1;*/
+/*    !*background-color: #333;*!*/
+/*    background-size: 1.5rem 1.5rem;*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: center center;*/
+/*    color: #fff;*/
+/*    font-size: 2.5rem;*/
+/*    line-height: 4rem;*/
+/*    text-align: center;*/
+/*    pointer-events: none;*/
+/*}*/
 
-.carousel::before {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-}
+/*.carousel::before {*/
+/*    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");*/
+/*}*/
 
-.carousel::after {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-}
+/*.carousel::after {*/
+/*    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");*/
+/*}*/
 
 
-.containerTout {
+/*.containerTout {*/
 
-    padding: 0;
-    width: 85%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/*    padding: 0;*/
+/*    width: 85%;*/
+/*    height: 70%;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
 
-}
+/*}*/
 
 .containerToutSlide {
 
@@ -269,7 +257,6 @@ ol, li {
 .containerRaquette {
 
     background-image: linear-gradient(140deg, rgba(126, 176, 0, 1), rgba(173, 228, 33, 1), rgba(239, 255, 200, 1));
-    /*box-shadow: 10px 15px 10px 0 rgba(47, 66, 0, 0.44);*/
 
     width: 100%;
 
@@ -295,6 +282,20 @@ ol, li {
     overflow: hidden;
 }
 
+/* Disposition bouton choisir */
+#poele .raquette {
+    margin: 140px 0 0 0;
+    width: 130px;
+}
+
+#rouleau .raquette {
+    margin: 100px 0 0 0;
+}
+
+#spatule .raquette {
+    margin: 100px 0 0 0;
+}
+
 /* Rotation des images de raquettes */
 .raquette {
     margin: 115px 0 0 0;
@@ -304,15 +305,11 @@ ol, li {
 }
 
 .raquetteRouleau {
-    width: 35%;
+    width: 30%;
 }
 
 .raquetteSpatule {
     width: 30%;
-}
-
-#spatule, #rouleau {
-    display: none;
 }
 
 h1 {
@@ -342,23 +339,27 @@ h1 {
     overflow: hidden;
 }
 
-.maskPoele, .maskSpatule {
+.maskPoele {
     top: -30px;
 }
 
 .maskSpatule {
-    width: 23%;
+    top: -50px;
+}
+
+.maskSpatule {
+    width: 26%;
 }
 
 .maskRouleau {
     width: 32%;
-    top: 30px;
+    top: -70px;
 }
 
 .ombre {
     position: relative;
 
-    top: 10px;
+    top: 30px;
 
     width: 110px;
     height: 21px;

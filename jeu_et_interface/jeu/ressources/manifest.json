@@ -4,8 +4,20 @@
 
 
     {"id": "decor",  "src": "ressources/images/background.png"},
+    {"id": "instruction",  "src": "ressources/images/instruction.png"},
+
     {"id": "tomate",  "src": "ressources/images/tomate.png"},
+    {"id": "choux",  "src": "ressources/images/choux.png"},
+    {"id": "oignon",  "src": "ressources/images/oignon.png"},
+    {"id": "patate",  "src": "ressources/images/patate.png"},
+    {"id": "radis",  "src": "ressources/images/radis.png"},
+
+
+
     {"id": "poele",  "src": "ressources/images/poele.png"},
+    {"id": "rouleau",  "src": "ressources/images/rouleau.png"},
+    {"id": "spatule",  "src": "ressources/images/spatule.png"},
+
     {"id": "joueur1",  "src": "ressources/images/Joueur1.png"},
     {"id": "joueur2",  "src": "ressources/images/Joueur2.png"},
     {"id": "etoile",  "src": "ressources/images/etoile.png"},

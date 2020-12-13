@@ -16,6 +16,10 @@ export class Application {
         this.socket.on("joueur2", this.mouvementJoueur2.bind(this));
 
 
+        this.socket.on("connection1", this.ajoutRaquette1.bind(this));
+        this.socket.on("connection2", this.ajoutRaquette2.bind(this));
+
+
         this.canvas = document.getElementById("canvas");
         this.canvas2 = document.getElementById("canvas2");
 
@@ -67,11 +71,7 @@ export class Application {
 
     demarrer() {
         console.log("jeu demarrer");
-        this.raquette1 = new Raquette(this.chargeur, "poele");
-        this.raquette2 = new Raquette(this.chargeur, "poele");
 
-        this.raquette1.scaleX = 0.5;
-        this.raquette1.scaleY = 0.5;
 
         this.ajoutDecor();
         this.jouerMusiqueMenu();
@@ -84,6 +84,7 @@ export class Application {
 
 
     ajoutDecor() {
+
 
 
         this.decor = new createjs.Bitmap(this.chargeur.getResult('decor'), true);
@@ -107,16 +108,24 @@ export class Application {
 
         this.phoneQr = new createjs.Bitmap(this.chargeur.getResult('phoneQr'), true);
 
+        this.instruction = new createjs.Bitmap(this.chargeur.getResult('instruction'), true);
+
 
         this.stage.addChild(this.decor, this.vie_1_joueur1, this.vie_2_joueur1, this.vie_3_joueur1, this.vie_4_joueur1, this.vie_5_joueur1, this.vie_1_joueur2, this.vie_2_joueur2, this.vie_3_joueur2, this.vie_4_joueur2, this.vie_5_joueur2);
 
         //this.vieJoueur1, this.vieJoueur2, ,
 
-        this.stageJeu.addChild(this.fondJeu, this.phoneQr);
+        this.stageJeu.addChild(this.fondJeu, this.instruction );
 
+        this.instruction.scaleX = 0.7;
+            this.instruction.scaleY = 0.7;
+
+            this.instruction.x = 120;
+            this.instruction.y = 10;
 
         this.phoneQr.scaleX = 0.5;
         this.phoneQr.scaleY = 0.5;
+
 
         this.phoneQr.x = 425;
 
@@ -290,26 +299,54 @@ export class Application {
 
 
     //------------------------------------------------------//
-    ajoutRaquette1() {
+    ajoutRaquette1(e) {
 
+        // this.socket.on("raquette", message => {
+        //
+
+        // });
+
+        console.log(e.raquette);
+
+
+        this.raquette1 = new Raquette(this.chargeur, e.raquette);
+
+        // this.raquette1 = new Raquette(this.chargeur, "spatule" );
+
+        this.raquette1.scaleX = 0.5;
+        this.raquette1.scaleY = 0.5;
 
         this.stageJeu.addChild(this.raquette1);
 
-        this.surConnection();
+
+
+
+        // this.surConnection();
 
         this.arretMusique();
 
     }
 
 
-    ajoutRaquette2() {
+    ajoutRaquette2(e) {
+        this.raquette2 = new Raquette(this.chargeur, e.raquette);
 
+        this.raquette2.scaleX = 0.5;
+        this.raquette2.scaleY = 0.5;
 
         // this.raquette1 = new Raquette(this.chargeur);
         this.stageJeu.addChild(this.raquette2);
-        this.raquette2.x = this.canvas.width - 120;
+        this.raquette2.x = this.canvas2.width - 60;
 
-        this.surConnection()
+        setInterval(this.creationBallePerime.bind(this), 5000);
+        setInterval(this.creationBalleSaine.bind(this), 15000);
+
+
+        this.jeuDemarrer = true;
+        this.jouerMusiqueJeu();
+
+        this.stageJeu.removeChild(this.instruction);
+        // this.surConnection()
     }
 
     surConnection() {
@@ -321,10 +358,12 @@ export class Application {
 
                 this.jeuDemarrer = true;
                 this.jouerMusiqueJeu();
-                this.stage.removeChild(this.phoneQr);
+
+                this.stageJeu.removeChild(this.instruction);
 
 
-                setInterval(this.lancementJeu.bind(this), 5000);
+                setInterval(this.creationBallePerime.bind(this), 5000);
+                setInterval(this.creationBalleSaine.bind(this), 15000);
             }
 
 
@@ -339,41 +378,99 @@ export class Application {
         }
     }
 
-    lancementJeu() {
+    creationBallePerime() {
 
 
         this.skinBalle = Math.floor(Math.random() * Math.floor(6 - 1) + 1);
+
+        // let colorOptions = ["tomateMoldy", "chouxMoldy", "oignonMoldy", "patateMoldy", "radisMoldy"];
+        // this.idSkinBalle = colorOptions(this.skinBalle)
 
         if (this.skinBalle === 1) {
             this.idSkinBalle = "tomateMoldy"
         }
 
 
-        if (this.skinBalle === 2) {
+        else if (this.skinBalle === 2) {
             this.idSkinBalle = "chouxMoldy"
         }
 
 
-        if (this.skinBalle === 3) {
+        else if (this.skinBalle === 3) {
             this.idSkinBalle = "oignonMoldy"
         }
 
 
-        if (this.skinBalle === 4) {
+        else if (this.skinBalle === 4) {
             this.idSkinBalle = "patateMoldy"
         }
 
 
-        if (this.skinBalle === 5) {
+        else if (this.skinBalle === 5) {
             this.idSkinBalle = "radisMoldy"
+        }
+
+        else if (this.skinBalle === 6) {
+            this.idSkinBalle = "tomate"
+        }
+
+        else if (this.skinBalle === 7) {
+            this.idSkinBalle = "choux"
+        }
+
+        else if (this.skinBalle === 8) {
+            this.idSkinBalle = "patate"
+        }
+
+        else if (this.skinBalle === 9) {
+            this.idSkinBalle = "radis"
+        }
+
+        else if (this.skinBalle === 10) {
+            this.idSkinBalle = "oignon"
         }
 
 
         this.balle = new Tomate(this.chargeur, this.canvas, this.raquette1, this.raquette2, this.pointsJ1, this.pointsJ2, this, this.idSkinBalle, this.canvas2);
 
         this.stageJeu.addChild(this.balle);
+    }
 
 
+
+    creationBalleSaine() {
+
+
+        this.skinBalle = Math.floor(Math.random() * Math.floor(6 - 1) + 1)
+
+        // let colorOptions = ["tomateMoldy", "chouxMoldy", "oignonMoldy", "patateMoldy", "radisMoldy"];
+        // this.idSkinBalle = colorOptions(this.skinBalle)
+
+
+         if (this.skinBalle === 1) {
+            this.idSkinBalle = "tomate"
+        }
+
+        else if (this.skinBalle === 2) {
+            this.idSkinBalle = "choux"
+        }
+
+        else if (this.skinBalle === 3) {
+            this.idSkinBalle = "patate"
+        }
+
+        else if (this.skinBalle === 4) {
+            this.idSkinBalle = "radis"
+        }
+
+        else if (this.skinBalle === 5) {
+            this.idSkinBalle = "oignon"
+        }
+
+
+        this.balle = new Tomate(this.chargeur, this.canvas, this.raquette1, this.raquette2, this.pointsJ1, this.pointsJ2, this, this.idSkinBalle, this.canvas2);
+
+        this.stageJeu.addChild(this.balle);
     }
 
 
@@ -386,8 +483,8 @@ export class Application {
 
     mouvementJoueur1(e) {
 
+
         this.joueur1Connecte = true;
-        this.ajoutRaquette1();
 
 
         if (e.beta <= -45) {
@@ -415,7 +512,7 @@ export class Application {
 
     mouvementJoueur2(e) {
 
-        this.ajoutRaquette2();
+
 
         this.joueur2Connecte = true;
 
@@ -462,7 +559,7 @@ export class Application {
             this.stage.removeChild(this.vie_2_joueur1)
         } else if (this.vie_1_joueur1.vivant === true) {
             this.vie_1_joueur1.vivant = false;
-            this.stage.removeChild(this.vie_1_joueur1)
+            this.stage.removeChild(this.vie_1_joueur1);
 
             // appeler fin
             this.arretMusique();
@@ -490,7 +587,7 @@ export class Application {
             this.stage.removeChild(this.vie_2_joueur2)
         } else if (this.vie_1_joueur2.vivant === true) {
             this.vie_1_joueur2.vivant = false;
-            this.stage.removeChild(this.vie_1_joueur2)
+            this.stage.removeChild(this.vie_1_joueur2);
 
             // appeler fin
             this.arretMusique();
@@ -498,6 +595,55 @@ export class Application {
         }
 
 
+    }
+
+    augmenteVieJ1(){
+        if (this.vie_5_joueur1.vivant === false && this.vie_4_joueur1.vivant === true ){
+            this.stage.addChild(this.vie_5_joueur1);
+            this.vie_5_joueur1.vivant = true
+        }
+
+       else if (this.vie_4_joueur1.vivant === false && this.vie_3_joueur1.vivant === true ){
+            this.stage.addChild(this.vie_4_joueur1);
+            this.vie_4_joueur1.vivant = true
+        }
+
+       else if (this.vie_3_joueur1.vivant === false && this.vie_2_joueur1.vivant === true ){
+            this.stage.addChild(this.vie_3_joueur1);
+            this.vie_3_joueur1.vivant = true
+        }
+
+
+        else if (this.vie_2_joueur1.vivant === false && this.vie_1_joueur1.vivant === true ){
+            this.stage.addChild(this.vie_2_joueur1);
+            this.vie_2_joueur1.vivant = true
+        }
+
+
+
+    }
+
+    augmenteVieJ2(){
+        if (this.vie_5_joueur2.vivant === false && this.vie_4_joueur2.vivant === true ){
+            this.stage.addChild(this.vie_5_joueur2);
+            this.vie_5_joueur2.vivant = true
+        }
+
+        else if (this.vie_4_joueur2.vivant === false && this.vie_3_joueur2.vivant === true ){
+            this.stage.addChild(this.vie_4_joueur2);
+            this.vie_4_joueur2.vivant = true
+        }
+
+        else if (this.vie_3_joueur2.vivant === false && this.vie_2_joueur2.vivant === true ){
+            this.stage.addChild(this.vie_3_joueur2);
+            this.vie_3_joueur2.vivant = true
+        }
+
+
+        else if (this.vie_2_joueur2.vivant === false && this.vie_1_joueur2.vivant === true ){
+            this.stage.addChild(this.vie_2_joueur2);
+            this.vie_2_joueur2.vivant = true
+        }
     }
 
 

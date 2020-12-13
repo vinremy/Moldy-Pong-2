@@ -61,6 +61,9 @@ io.on("connection", socket => {
 
 });
 
+
+
+
 function gererNouvelleInterface(socket) {
 
   console.log("Connexion d'une interface");
@@ -75,6 +78,8 @@ function gererNouvelleInterface(socket) {
           jeux.forEach(jeu => jeu.emit("connection1", message))
       })
 
+
+
   } else if (!interfaces[1]) {
     interfaces[1] = socket;
     socket.on("mouvement", message => {
@@ -83,7 +88,9 @@ function gererNouvelleInterface(socket) {
 
       socket.on("connection", message => {
           jeux.forEach(jeu => jeu.emit("connection2", message))
-      })
+      });
+
+
 
   } else {
     interfaces.push(socket);

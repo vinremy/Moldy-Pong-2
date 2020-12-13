@@ -25,13 +25,25 @@ export class Tomate extends createjs.Bitmap {
             this.scaleY = 0.1;
         }
 
-        else{
+        else {
             this.scaleX = 0.5;
             this.scaleY = 0.5;
         }
 
+
+        if (this.idSkinBalle === 'tomateMoldy' || this.idSkinBalle === "chouxMoldy" || this.idSkinBalle === "oignonMoldy" || this.idSkinBalle === "patateMoldy" || this.idSkinBalle === "radisMoldy") {
+            this.perime = true
+        }
+
+        else{
+            this.scaleX = 0.9;
+            this.scaleY = 0.9;
+        }
+
+        this.hauteur = Math.floor(Math.random()*500);
+
         this.x = this.canvas2.width / 2;
-        this.y = this.canvas2.height / 2;
+        this.y = this.hauteur;
 
         this.min = Math.ceil(5);
         this.max = Math.floor(10);
@@ -43,8 +55,7 @@ export class Tomate extends createjs.Bitmap {
 
         createjs.Ticker.addEventListener("tick", this.deplacerBalle.bind(this));
 
-
-
+console.log(this.y)
 
     }
 
@@ -88,7 +99,15 @@ export class Tomate extends createjs.Bitmap {
         if (this.x <= 0) {
 
 
-            this.app.augmenterPointJ2();
+            if (this.perime){
+                this.app.augmenterPointJ2();
+            }
+
+            else {
+                this.app.augmenteVieJ1();
+            }
+
+
 
 
             this.detruire();
@@ -96,9 +115,17 @@ export class Tomate extends createjs.Bitmap {
 
         }
 
-        if (this.x >= this.canvas.width) {
+        if (this.x >= this.canvas2.width) {
 
-            this.app.augmenterPointJ1();
+            if (this.perime){
+                this.app.augmenterPointJ1();
+            }
+
+            else{
+                this.app.augmenteVieJ2();
+            }
+
+
 
 
             this.detruire();

@@ -4,6 +4,7 @@
 
 
     {"id": "decor",  "src": "ressources/images/background.png"},
+    {"id": "intro",  "src": "ressources/images/introHD.mp4"},
     {"id": "instruction",  "src": "ressources/images/instruction.png"},
 
     {"id": "tomate",  "src": "ressources/images/tomate.png"},

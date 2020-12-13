@@ -72,9 +72,14 @@ export class Application {
     demarrer() {
         console.log("jeu demarrer");
 
+        this.intro = document.querySelector("iframe");
 
-        this.ajoutDecor();
-        this.jouerMusiqueMenu();
+        setTimeout(() => {
+            this.intro.style.display = "none";
+            this.ajoutDecor();
+            this.jouerMusiqueMenu();
+        }, 76800);
+
         //this.jouerMusiqueJeu();
 
 

@@ -78,8 +78,10 @@ export class Application {
             this.intro.style.display = "none";
             this.ajoutDecor();
             this.jouerMusiqueMenu();
-        }, 76800);
+        }, 500);
 
+
+        //76800
         //this.jouerMusiqueJeu();
 
 
@@ -318,15 +320,15 @@ export class Application {
 
         // this.raquette1 = new Raquette(this.chargeur, "spatule" );
 
-        this.raquette1.scaleX = 0.5;
-        this.raquette1.scaleY = 0.5;
+        this.raquette1.scaleX = 0.7;
+        this.raquette1.scaleY = 0.7;
 
         this.stageJeu.addChild(this.raquette1);
 
 
+this.joueur1Connecte = true;
 
-
-        // this.surConnection();
+        this.surConnection();
 
         this.arretMusique();
 
@@ -336,25 +338,30 @@ export class Application {
     ajoutRaquette2(e) {
         this.raquette2 = new Raquette(this.chargeur, e.raquette);
 
-        this.raquette2.scaleX = 0.5;
-        this.raquette2.scaleY = 0.5;
+        this.raquette2.scaleX = 0.7;
+        this.raquette2.scaleY = 0.7;
 
         // this.raquette1 = new Raquette(this.chargeur);
         this.stageJeu.addChild(this.raquette2);
         this.raquette2.x = this.canvas2.width - 60;
 
-        setInterval(this.creationBallePerime.bind(this), 5000);
-        setInterval(this.creationBalleSaine.bind(this), 15000);
+        // setInterval(this.creationBallePerime.bind(this), 5000);
+        // setInterval(this.creationBalleSaine.bind(this), 15000);
+        //
+        //
+        // this.jeuDemarrer = true;
+        // this.jouerMusiqueJeu();
+        //
+        // this.stageJeu.removeChild(this.instruction);
 
+        this.joueur2Connecte = true;
 
-        this.jeuDemarrer = true;
-        this.jouerMusiqueJeu();
-
-        this.stageJeu.removeChild(this.instruction);
-        // this.surConnection()
+        this.surConnection()
     }
 
     surConnection() {
+
+        console.log("une connection");
 
         if (this.jeuDemarrer === false) {
 
@@ -367,8 +374,8 @@ export class Application {
                 this.stageJeu.removeChild(this.instruction);
 
 
-                setInterval(this.creationBallePerime.bind(this), 5000);
-                setInterval(this.creationBalleSaine.bind(this), 15000);
+               this.intervalPerime = setInterval(this.creationBallePerime.bind(this), 5000);
+                this.intervalSaint = setInterval(this.creationBalleSaine.bind(this), 15000);
             }
 
 
@@ -567,6 +574,8 @@ export class Application {
             this.stage.removeChild(this.vie_1_joueur1);
 
             // appeler fin
+            this.endGame();
+
             this.arretMusique();
             this.jouerMusiqueFin();
         }
@@ -597,6 +606,8 @@ export class Application {
             // appeler fin
             this.arretMusique();
             this.jouerMusiqueFin();
+
+            this.endGame();
         }
 
 
@@ -652,5 +663,13 @@ export class Application {
     }
 
 
+    endGame(){
+
+        clearInterval(this.intervalPerime);
+        clearInterval(this.intervalSaint);
+        this.stageJeu.removeChild(this.balle)
+
+
+    }
 }
 

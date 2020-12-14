@@ -51,11 +51,12 @@ let jeux = [];
 io.on("connection", socket => {
 
   // On vérifie si la connexion provient d'une interface ou d'un jeu
-  if (socket.handshake.query.type === "interface") {
+  if (socket.handshake.query.type === "Mika") {
     gererNouvelleInterface(socket);
   } else if (socket.handshake.query.type === "jeu") {
     gererNouveauJeu(socket);
   } else {
+    console.log("connection refusé");
     socket.disconnect();
   }
 
@@ -100,7 +101,7 @@ function gererNouvelleInterface(socket) {
   interfaces.forEach((interface, index) => {
     if (!interface) return;
     interface.emit("position", {position: index})
-  })
+  });
 
   // Ajout d'un écouteur pour détecter la déconnexion d'une interface
   socket.on('disconnect', () => {

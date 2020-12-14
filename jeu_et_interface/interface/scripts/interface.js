@@ -4,7 +4,7 @@ export class Interface {
     constructor() {
 
         this.socket = io("https://vremy.dectim.ca:3011", {
-            query: {type: "interface"}
+            query: {type: "Mika"}
         });
 
 

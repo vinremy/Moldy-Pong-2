@@ -74,7 +74,7 @@ console.log(this.y)
 
             if (this.rebond === true) {
                 this.directionX = -this.directionX;
-                this.directionY = -this.directionY;
+
                 this.rebond = false;
 
                 setTimeout(() => {

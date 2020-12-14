@@ -18,26 +18,8 @@ export class Tomate extends createjs.Bitmap {
         this.rebond = true;
 
 
-
-
-        if (this.idSkinBalle === "tomateMoldy" || this.idSkinBalle === "chouxMoldy" || this.idSkinBalle === "oignonMoldy") {
-            this.scaleX = 0.1;
-            this.scaleY = 0.1;
-        }
-
-        else {
-            this.scaleX = 0.5;
-            this.scaleY = 0.5;
-        }
-
-
         if (this.idSkinBalle === 'tomateMoldy' || this.idSkinBalle === "chouxMoldy" || this.idSkinBalle === "oignonMoldy" || this.idSkinBalle === "patateMoldy" || this.idSkinBalle === "radisMoldy") {
             this.perime = true
-        }
-
-        else{
-            this.scaleX = 0.9;
-            this.scaleY = 0.9;
         }
 
         this.hauteur = Math.floor(Math.random()*500);

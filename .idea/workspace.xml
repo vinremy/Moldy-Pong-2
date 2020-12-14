@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47feb110-6b27-40a6-9d8e-5a082788c3ea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js" afterDir="false" />
+    <list default="true" id="47feb110-6b27-40a6-9d8e-5a082788c3ea" name="Default" comment="carousel interface mobile et responsive interface mobile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeu_et_interface/interface/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/jeu_et_interface/interface/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeu_et_interface/interface/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/jeu_et_interface/interface/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeu_et_interface/jeu/ressources/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/jeu_et_interface/jeu/ressources/manifest.json" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +105,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectId" id="1lcP5J5aFKElTKTIGUUN9tdWV7J" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -171,7 +170,13 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.prettier" value="true" />
@@ -180,19 +185,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/jeu_et_interface/jeu/ressources/video" />
+    </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -206,6 +206,8 @@
       <workItem from="1607530471225" duration="10001000" />
       <workItem from="1607550288977" duration="8000" />
       <workItem from="1607551776400" duration="1194000" />
+      <workItem from="1607893224184" duration="316000" />
+      <workItem from="1607894287037" duration="5055000" />
     </task>
     <servers />
   </component>
@@ -236,10 +238,23 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="carousel interface mobile&#10;responsive interface mobile" />
+    <MESSAGE value="carousel interface mobile et responsive interface mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="carousel interface mobile et responsive interface mobile" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/index.html">

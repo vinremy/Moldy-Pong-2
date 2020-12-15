@@ -35,7 +35,7 @@ export class Application {
         this.joueur2Connecte = false;
         this.musiqueBefore = null;
         this.musiqueLoop = null;
-
+        this.timeoutIntro = null;
 
         this.jeuDemarrer = false
 
@@ -71,13 +71,18 @@ export class Application {
 
         // POUR SKIPPER L'INTRO?
         // this.boutonSkip = new createjs.Bitmap(this.chargeur.getResult('boutSkip'), false)
+        // // this.boutonSkip.x = position à voir;
+        // // this.boutonSkip.y = position à voir;
+        // this.stage.addChild(this.boutonSkip);
+        //
         //
         // if (this.boutonSkip === true) {
         //     clearTimeout(this.timeoutIntro)
         //     this.intro.style.display = "none";
         //     this.ajoutDecor();
         //     this.jouerMusiqueMenu();
-        //    
+        //     this.boutonSkip.display = "none";
+        //
         // }
 
     }

@@ -65,6 +65,7 @@ io.on("connection", socket => {
 
 
 
+
 function gererNouvelleInterface(socket) {
 
   console.log("Connexion d'une interface");
@@ -127,6 +128,8 @@ function gererNouvelleInterface(socket) {
 
   })
 
+
+
 }
 
 function gererNouveauJeu(socket) {
@@ -141,3 +144,21 @@ function gererNouveauJeu(socket) {
   });
 
 }
+
+
+
+
+// io.on("finJeu", finDeJeu());
+//
+// function finDeJeu() {
+//
+//   interfaces[0].emit("redirect", {type: "redirect"});
+//   interfaces[1].emit("redirect", {type: "redirect"});
+//
+//
+// }
+//
+
+
+
+

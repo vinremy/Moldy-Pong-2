@@ -16,6 +16,11 @@ export class Interface {
         document.querySelector(".btnAutorise2").addEventListener("click", this.autoriser2.bind(this));
         document.querySelector(".btnAutorise3").addEventListener("click", this.autoriser3.bind(this));
 
+        this.socket.on("redirect", this.redirect.bind(this));
+
+        this.socket.on("position", message => {
+            alert("votre position dans la liste" + message.position);
+        });
 
     }
 
@@ -64,7 +69,7 @@ export class Interface {
 
         // Vérifier si les événements d'orientation sont disponibles sur cette plateforme
 
-        alert("click btn autorisé")
+
 
         if (this.removeEvent === false) {
 
@@ -105,7 +110,7 @@ export class Interface {
 
         // Vérifier si les événements d'orientation sont disponibles sur cette plateforme
 
-        alert("click btn autorisé")
+
 
         if (this.removeEvent === false) {
 
@@ -147,5 +152,8 @@ export class Interface {
 
     }
 
+    redirect(){
+        window.location.href = "http://www.w3schools.com";
+    }
 
 }

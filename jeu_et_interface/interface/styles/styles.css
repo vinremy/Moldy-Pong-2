@@ -496,3 +496,12 @@ button {
         font-size: 6rem;
     }
 }
+
+.containerToutSlide{
+    display: none;
+}
+
+.file-attente{
+display: flex;
+}
+

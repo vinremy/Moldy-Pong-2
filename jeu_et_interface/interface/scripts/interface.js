@@ -11,15 +11,38 @@ export class Interface {
         this.removeEvent = false;
 
 
+
+
+
         // Bouton pour demander la permission d'accéder aux données de positionnement
         document.querySelector(".btnAutorise").addEventListener("click", this.autoriser.bind(this));
         document.querySelector(".btnAutorise2").addEventListener("click", this.autoriser2.bind(this));
         document.querySelector(".btnAutorise3").addEventListener("click", this.autoriser3.bind(this));
 
+        this.fenetreListe = document.querySelector(".file-attente");
+        this.fenetreRaquette = document.querySelector(".containerToutSlide");
+
+
         this.socket.on("redirect", this.redirect.bind(this));
 
         this.socket.on("position", message => {
-            document.getElementById("position").innerText = message.position;
+
+
+            if (message.position === 1 || message.position === 0){
+                this.fenetreListe.style.display = "none";
+                this.fenetreRaquette.style.display = "flex";
+
+                this.timeoutInnactive = setTimeout(() => {
+                    this.innactive();
+                }, 79800);
+
+            }
+
+            else{
+                document.getElementById("position").innerText = message.position;
+                this.fenetreListe.style.display = "flex";
+                this.fenetreRaquette.style.display = "none";
+            }
         });
 
     }
@@ -149,11 +172,16 @@ export class Interface {
 
 
         this.socket.emit("mouvement", {type: "mouvement", alpha: e.alpha, beta: e.beta, gamma: e.gamma});
+        clearTimeout(this.timeoutInnactive);
 
     }
 
     redirect(){
         window.location.href = "https://vremy.dectim.ca/chaos/interface/rejouer.html";
+    }
+
+    innactive(){
+        window.location.href = "https://vremy.dectim.ca/chaos/interface/innactif.html";
     }
 
 }

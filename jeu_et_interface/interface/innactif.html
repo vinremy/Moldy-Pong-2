@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Interface mobile</title>
+    <script src="bibliotheques/socket.io.js"></script>
+
+    <script src="scripts/interface.js"></script>
+    <script type="module">
+        import {Interface} from "./scripts/interface.js";
+
+        new Interface();
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../interface/styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+
+
+</head>
+
+<body>
+<div class="rejouer">
+    <img src="../jeu/ressources/images/logo.png" alt="logo">
+    <p>
+       Vous avez été exclu de la partie <br> car vous étiez innactif
+    </p>
+    <a href="index.html" class="btnrejouer"> rejouer </a>
+</div>
+</body>
+
+</html>

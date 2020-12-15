@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73f3d030-9446-4c2f-9964-5fe33ca9ce1e" name="Default Changelist" comment="Réparer">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+    <list default="true" id="73f3d030-9446-4c2f-9964-5fe33ca9ce1e" name="Default Changelist" comment="musiq">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/tomate.js" beforeDir="false" afterPath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/tomate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +58,7 @@
       <workItem from="1607623050092" duration="3880000" />
       <workItem from="1608030758184" duration="210000" />
       <workItem from="1608043513871" duration="2837000" />
-      <workItem from="1608050832030" duration="6790000" />
+      <workItem from="1608050832030" duration="8155000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout des fonctions pour la musique">
       <created>1607445033720</created>
@@ -89,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608050877122</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Réparer timeout musique d'intro">
+      <created>1608071368463</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608071368463</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +106,7 @@
     <MESSAGE value="intégration des effets sonores" />
     <MESSAGE value="clean up" />
     <MESSAGE value="Ajout des sons pour les raquettes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout des sons pour les raquettes" />
+    <MESSAGE value="Réparer timeout musique d'intro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Réparer timeout musique d'intro" />
   </component>
 </project>

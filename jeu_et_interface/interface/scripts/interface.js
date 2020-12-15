@@ -19,7 +19,7 @@ export class Interface {
         this.socket.on("redirect", this.redirect.bind(this));
 
         this.socket.on("position", message => {
-            alert("votre position dans la liste" + message.position);
+            document.getElementById("position").innerText = message.position;
         });
 
     }
@@ -29,7 +29,7 @@ export class Interface {
 
         // Vérifier si les événements d'orientation sont disponibles sur cette plateforme
 
-        alert("click btn autorisé")
+
 
         if (this.removeEvent === false) {
 

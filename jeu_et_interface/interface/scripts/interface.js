@@ -153,7 +153,7 @@ export class Interface {
     }
 
     redirect(){
-        window.location.href = "http://www.w3schools.com";
+        window.location.href = "https://vremy.dectim.ca/chaos/interface/rejouer.html";
     }
 
 }

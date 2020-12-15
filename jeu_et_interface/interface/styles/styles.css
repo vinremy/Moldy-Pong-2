@@ -249,7 +249,7 @@ button {
     bottom: 30px;
 
     font-size: 3rem;
-    font-family: 'Ranchers', cursive;
+    font-family: 'Ranchers', sans-serif;
     color: #FFE424;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -282,6 +282,65 @@ button {
 
 
 /*----------------------------------------*/
+/* File d'attente
+/*----------------------------------------*/
+.file-attente{
+    height: 101vh;
+    width: 100vw;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    background: url("../../jeu/ressources/images/fond-rejouer.png") no-repeat center/cover;
+}
+
+.file-attente img{
+    width: 85%;
+
+    margin-top: 45px;
+}
+
+.file-attente p{
+    font-family: 'Ranchers', sans-serif;
+    font-size: 1.4rem;
+    line-height: 27px;
+
+    letter-spacing: 2px;
+    text-align: center;
+
+    text-shadow: -2px -2px 0 rgba(0,0,0,0.25);
+
+    color:white;
+}
+
+.file-attente div{
+    margin-top: 60px;
+
+    height: 40%;
+    width: 80%;
+
+    background: #FF8C1E;
+    box-shadow: 0 11px 0 #D85C14;
+
+    padding: 11px 60px;
+
+    border-radius: 13px;
+}
+
+.file-attente #position {
+    margin: 50px 0;
+    font-size: 9rem;
+
+    padding: 45% 80px;
+
+    background: #FF8C1E;
+    box-shadow: 0 11px 0 #D85C14;
+    border-radius: 13px;
+}
+
+/*----------------------------------------*/
 /* Rejouer
 /*----------------------------------------*/
 .rejouer{
@@ -303,7 +362,7 @@ button {
 }
 
 .rejouer p{
-    font-family: 'Ranchers', cursive;
+    font-family: 'Ranchers', sans-serif;
     font-size: 1.7rem;
 
     letter-spacing: 2px;
@@ -347,6 +406,12 @@ button {
         margin: -20px 0 0 0;
         width: 28%;
     }
+
+    .file-attente #position {padding: 35% 80px;}
+}
+
+@media only screen and (max-height: 736px) {
+    .file-attente #position {padding: 30% 80px;}
 }
 
 @media only screen and (max-height: 667px) {
@@ -367,5 +432,45 @@ button {
         width: 23%;
     }
 
+    .file-attente #position {
+        margin: 20px 0;
+        padding: 30% 80px;
+    }
+}
 
+@media only screen and (max-height: 623px) {
+    #poele .raquette {width: 30%;}
+    #rouleau .raquette {width: 20%;}
+    #spatule .spatule {width: 20%;}
+    .ombre {  width: 100px;}
+
+    .file-attente #position {
+        padding: 25% 80px;
+        font-size: 7rem;
+    }
+}
+
+@media only screen and (max-height: 578px) {
+    #poele .raquette {width: 26%;}
+    #rouleau .raquette {width: 18%;}
+    #spatule .spatule {width: 18%;}
+    .ombre {  width: 90px;}
+
+    .file-attente #position {
+        padding: 20% 80px;
+        font-size: 7rem;
+    }
+}
+
+@media only screen and (max-height: 530px) {
+    #poele .raquette {width: 28%;}
+    #rouleau .raquette {width: 20%;}
+    #spatule .spatule {width: 19%;}
+    .ombre{display:none;}
+
+    .file-attente #position {
+        margin: 10px 0;
+        padding: 15% 80px;
+        font-size: 6rem;
+    }
 }

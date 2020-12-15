@@ -159,6 +159,9 @@ ol, li {
 }
 
 
+/*----------------------------------------*/
+/* Choix de raquettes
+/*----------------------------------------*/
 .containerToutSlide {
 
     padding: 0;
@@ -278,6 +281,55 @@ button {
 }
 
 
+/*----------------------------------------*/
+/* Rejouer
+/*----------------------------------------*/
+.rejouer{
+    height: 101vh;
+    width: 100vw;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    background: url("../../jeu/ressources/images/fond-rejouer.png") no-repeat center/cover;
+}
+
+.rejouer img{
+    width: 85%;
+
+    margin-top: 45px;
+}
+
+.rejouer p{
+    font-family: 'Ranchers', cursive;
+    font-size: 1.7rem;
+
+    letter-spacing: 2px;
+    text-align: center;
+
+    text-shadow: -2px -2px 0 rgba(0,0,0,0.25);
+
+    color:white;
+}
+
+.btnrejouer{
+    margin-bottom: 50px;
+    background: #FF8C1E;
+    box-shadow: 0 7.5px 0 #D85C14;
+
+    padding: 11px 60px;
+
+    border-radius: 13px;
+
+    font-size: 2.5rem;
+
+    color: white;
+    text-shadow: none;
+}
+
+
 
 /* Responsive */
 @media only screen and (max-height: 744px) {
@@ -296,7 +348,6 @@ button {
         width: 28%;
     }
 }
-
 
 @media only screen and (max-height: 667px) {
     /* Iphone 6/7/8 */

@@ -374,6 +374,18 @@ button {
 }
 
 .btnrejouer{
+    margin-top: 185px;
+
+    justify-self: flex-end;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-family: 'Ranchers', sans-serif;
+
+    letter-spacing: 2px;
+    text-shadow: -2px -2px 0 rgba(0,0,0,0.25);
+
     margin-bottom: 50px;
     background: #FF8C1E;
     box-shadow: 0 7.5px 0 #D85C14;
@@ -385,9 +397,7 @@ button {
     font-size: 2.5rem;
 
     color: white;
-    text-shadow: none;
 }
-
 
 
 /* Responsive */
@@ -405,6 +415,10 @@ button {
     #spatule .spatule {
         margin: -20px 0 0 0;
         width: 28%;
+    }
+
+    .btnrejouer{
+        margin-top: 200px;
     }
 
     .file-attente #position {padding: 35% 80px;}
@@ -432,6 +446,8 @@ button {
         width: 23%;
     }
 
+    .btnrejouer{margin-top: 130px;}
+
     .file-attente #position {
         margin: 20px 0;
         padding: 30% 80px;
@@ -443,6 +459,8 @@ button {
     #rouleau .raquette {width: 20%;}
     #spatule .spatule {width: 20%;}
     .ombre {  width: 100px;}
+
+    .btnrejouer{margin-top: 90px;}
 
     .file-attente #position {
         padding: 25% 80px;
@@ -456,6 +474,8 @@ button {
     #spatule .spatule {width: 18%;}
     .ombre {  width: 90px;}
 
+    .btnrejouer{margin-top: 60px;}
+
     .file-attente #position {
         padding: 20% 80px;
         font-size: 7rem;
@@ -467,6 +487,8 @@ button {
     #rouleau .raquette {width: 20%;}
     #spatule .spatule {width: 19%;}
     .ombre{display:none;}
+
+    .btnrejouer{margin-top: 10px;}
 
     .file-attente #position {
         margin: 10px 0;

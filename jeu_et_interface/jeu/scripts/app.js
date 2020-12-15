@@ -61,6 +61,12 @@ export class Application {
         this.pointsJ1 = 0;
         this.pointsJ2 = 0;
 
+        setTimeout(() => {
+            this.intro.style.display = "none";
+            this.ajoutDecor();
+            this.jouerMusiqueMenu();
+        }, 76800);
+
 
     }
 
@@ -74,11 +80,7 @@ export class Application {
 
         this.intro = document.querySelector("iframe");
 
-        setTimeout(() => {
-            this.intro.style.display = "none";
-            this.ajoutDecor();
-            this.jouerMusiqueMenu();
-        }, 500);
+
 
 
         //76800
@@ -667,8 +669,9 @@ this.joueur1Connecte = true;
 
         clearInterval(this.intervalPerime);
         clearInterval(this.intervalSaint);
-        this.stageJeu.removeChild(this.balle)
+        this.stageJeu.removeChild(this.balle);
 
+        this.socket.emit("finJeu", {type: "finJeu",});
 
     }
 }

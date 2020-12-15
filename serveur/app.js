@@ -21,23 +21,22 @@ const SocketIO = require('socket.io');
 
 // Configurations
 const config = {
-  adresse: "vremy.dectim.ca",  // Doit être la même adresse que celle du certificat SSL!
-  port: 3011,                   // Doit être exclusif à chaque équipe!
-  certificat: fs.readFileSync(path.resolve() + '/securite/certificat.pem'),
-  cle: fs.readFileSync(path.resolve() + '/securite/cle.pem')
+    adresse: "vremy.dectim.ca",  // Doit être la même adresse que celle du certificat SSL!
+    port: 3011,                   // Doit être exclusif à chaque équipe!
+    certificat: fs.readFileSync(path.resolve() + '/securite/certificat.pem'),
+    cle: fs.readFileSync(path.resolve() + '/securite/cle.pem')
 }
 
 // Instantiation d'un serveur HTTP et d'un serveur de WebSocket utlisant le serveur HTTP comme
 // couche de transport
 
 
-
-const serveur = https.createServer({ key: config.cle, cert: config.certificat });
+const serveur = https.createServer({key: config.cle, cert: config.certificat});
 const io = SocketIO(serveur);
 
 // Démarrage du serveur HTTP
 serveur.listen(config.port, config.adresse, () => {
-  console.log("Le serveur est prêt et écoute sur le port " + serveur.address().port);
+    console.log("Le serveur est prêt et écoute sur le port " + serveur.address().port);
 });
 
 // Liste des connexions de toutes les interfaces (appareils mobiles)
@@ -50,120 +49,126 @@ let jeux = [];
 // ceux-ci.
 io.on("connection", socket => {
 
-  // On vérifie si la connexion provient d'une interface ou d'un jeu
-  if (socket.handshake.query.type === "Mika") {
-    gererNouvelleInterface(socket);
-  } else if (socket.handshake.query.type === "jeu") {
-    gererNouveauJeu(socket);
-  } else {
-    console.log("connection refusé");
-    socket.disconnect();
-  }
+    // On vérifie si la connexion provient d'une interface ou d'un jeu
+    if (socket.handshake.query.type === "Mika") {
+        gererNouvelleInterface(socket);
+    } else if (socket.handshake.query.type === "jeu") {
+        gererNouveauJeu(socket);
+    } else {
+        console.log("connection refusé");
+        socket.disconnect();
+    }
 
 });
 
 
-
-
-
 function gererNouvelleInterface(socket) {
 
-  console.log("Connexion d'une interface");
+    console.log("Connexion d'une interface");
 
-  if (!interfaces[0]) {
-    interfaces[0] = socket;
-    socket.on("mouvement", message => {
-      jeux.forEach(jeu => jeu.emit("joueur1", message))
-    });
+    if (!interfaces[0]) {
+        interfaces[0] = socket;
+        socket.on("mouvement", message => {
+            jeux.forEach(jeu => jeu.emit("joueur1", message))
+        });
 
-      socket.on("connection", message => {
-          jeux.forEach(jeu => jeu.emit("connection1", message))
-      });
-
-
-      socket.on("finJeu", message => {
-          interfaces[0].emit("redirect", {type: "redirect", message});
-      });
+        socket.on("connection", message => {
+            jeux.forEach(jeu => jeu.emit("connection1", message))
+        });
 
 
-
-  } else if (!interfaces[1]) {
-    interfaces[1] = socket;
-    socket.on("mouvement", message => {
-      jeux.forEach(jeu => jeu.emit("joueur2", message))
-    });
-
-      socket.on("connection", message => {
-          jeux.forEach(jeu => jeu.emit("connection2", message))
-      });
-      socket.on("finJeu", message => {
-          interfaces[1].emit("redirect", {type: "redirect", message});
-      });
+        socket.on("finJeu", message => {
+            interfaces[0].emit("redirect", {type: "redirect", message});
+        });
 
 
-  } else {
-    interfaces.push(socket);
-  }
+    } else if (!interfaces[1]) {
+        interfaces[1] = socket;
+        socket.on("mouvement", message => {
+            jeux.forEach(jeu => jeu.emit("joueur2", message))
+        });
+
+        socket.on("connection", message => {
+            jeux.forEach(jeu => jeu.emit("connection2", message))
+        });
+        socket.on("finJeu", message => {
+            interfaces[1].emit("redirect", {type: "redirect", message});
+        });
+
+
+    } else {
+        interfaces.push(socket);
+    }
 
     interfaces.forEach((interface, index) => {
         if (!interface) return;
         interface.emit("position", {position: index})
     })
 
-  // Ajout d'un écouteur pour détecter la déconnexion d'une interface
-  socket.on('disconnect', () => {
+    // Ajout d'un écouteur pour détecter la déconnexion d'une interface
 
-    socket.emit("disconnected", socket);
+    socket.on('disconnect', () => {
 
-    // Identification de l'index de l'interface qui vient de se déconnecter
-    const index = interfaces.indexOf(socket);
+        // socket.emit("disconnected", socket);
 
-    console.log("Déconnexion de l'interface: ", index);
+        // Identification de l'index de l'interface qui vient de se déconnecter
+        const index = interfaces.indexOf(socket);
 
-    if (index === 0) {
-      interfaces[0] = null;
-    } else if (index === 1) {
-      interfaces[1] = null;
-    } else {
-      interfaces.splice(index, 1);
-    }
+        console.log("Déconnexion de l'interface: ", index);
 
-    // Envoyer une mise à jour à toutes les interfaces pour identifer leur position dans la liste
-      interfaces.forEach((interface, index) => {
-          if (interface === null) return;
-          interface.emit("position", {position: index})
-      })
-  })
+        if (index === 0) {
+            interfaces[0] = null;
+        } else if (index === 1) {
+            interfaces[1] = null;
+        } else {
+            interfaces.splice(index, 1);
+        }
 
+        // Envoyer une mise à jour à toutes les interfaces pour identifer leur position dans la liste
+        interfaces.forEach((interface, index) => {
+            if (interface === null) return;
+            interface.emit("position", {position: index})
+        })
+    })
 
 
 }
 
 function gererNouveauJeu(socket) {
 
-  console.log("Connexion d'une page web de jeu");
+    console.log("Connexion d'une page web de jeu");
 
-  jeux.push(socket);
+    if (jeux.length < 0){
+        jeux.push(socket);
 
-  socket.on('disconnect', () => {
-      console.log("Déconnexion d'une page de jeu!");
-      jeux = jeux.filter(item => item !== socket)
-  });
+        socket.on('disconnect', () => {
+            console.log("Déconnexion d'une page de jeu!");
+            jeux = jeux.filter(item => item !== socket)
+        });
+
+
+        socket.on("finJeu", finDeJeu);
+    }
+
+    else {
+
+    }
+
+
+
+
+
+}
+
+function finDeJeu() {
+
+    interfaces[0].emit("redirect", {type: "redirect"});
+    interfaces[1].emit("redirect", {type: "redirect"});
+
 
 }
 
 
-
-
-// io.on("finJeu", finDeJeu());
-//
-// function finDeJeu() {
-//
-//   interfaces[0].emit("redirect", {type: "redirect"});
-//   interfaces[1].emit("redirect", {type: "redirect"});
-//
-//
-// }
 //
 
 

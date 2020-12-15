@@ -62,6 +62,7 @@ console.log("test");
         // Vérifier si les événements d'orientation sont disponibles sur cette plateforme
 
         clearTimeout(this.timeoutInnactive);
+        this.timeoutInnactive = null;
         this.inactif = false;
 
         if (this.removeEvent === false) {
@@ -101,6 +102,7 @@ console.log("test");
     autoriser2(e) {
 
         clearTimeout(this.timeoutInnactive);
+        this.timeoutInnactive = null;
         this.inactif = false;
         // Vérifier si les événements d'orientation sont disponibles sur cette plateforme
 
@@ -144,6 +146,7 @@ console.log("test");
     autoriser3(e) {
 
         clearTimeout(this.timeoutInnactive);
+        this.timeoutInnactive = null;
         this.inactif = false;
         // Vérifier si les événements d'orientation sont disponibles sur cette plateforme
 

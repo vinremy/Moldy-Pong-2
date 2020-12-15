@@ -67,7 +67,7 @@ export class Application {
             this.intro.style.display = "none";
             this.ajoutDecor();
             this.jouerMusiqueMenu();
-        }, 79800);
+        }, 81000);
 
     }
 
@@ -96,6 +96,7 @@ export class Application {
 
 
             clearTimeout(this.timeoutIntro);
+            this.timeoutIntro = null;
             // this.intro.style.display = "none";
             this.intro.remove();
             this.ajoutDecor();
@@ -703,8 +704,8 @@ export class Application {
         this.interfaceDeFin = new createjs.Bitmap(this.chargeur.getResult('interfaceFin'));
         this.stageJeu.addChild(this.interfaceDeFin);
         console.log(this.interfaceDeFin);
-        this.interfaceDeFin.scaleX = 0.3;
-        this.interfaceDeFin.scaleY = 0.3;
+        this.interfaceDeFin.scaleX = 0.7;
+        this.interfaceDeFin.scaleY = 0.7;
 
         setTimeout(() => {
             location.reload(true);

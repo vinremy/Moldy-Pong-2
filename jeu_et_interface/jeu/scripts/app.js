@@ -69,6 +69,7 @@ export class Application {
             this.jouerMusiqueMenu();
         }, 79800);
 
+        alert("deployment marche")
         // POUR SKIPPER L'INTRO?
 
         //
@@ -705,8 +706,14 @@ export class Application {
 
         this.socket.emit("finJeu", {type: "finJeu",});
 
+        // INTERFACE DE FIN DE JEU
+        this.interfaceDeFin = new createjs.Bitmap(this.chargeur.getResult('interfaceFin'));
+        this.stageJeu.addChild(this.interfaceDeFin);
+        console.log(this.interfaceDeFin);
+
         setTimeout(() => {
             location.reload();
+
         }, 25000);
 
     }

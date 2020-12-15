@@ -4,6 +4,7 @@
 
 
     {"id": "decor",  "src": "ressources/images/background.png"},
+    {"id": "interfaceFin", "src": "ressources/images/interfacefin.png"},
 
     {"id": "instruction",  "src": "ressources/images/instruction.png"},
     {"id" : "boutSkip", "src": "ressources/images/skip.png"},

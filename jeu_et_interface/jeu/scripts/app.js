@@ -703,8 +703,8 @@ export class Application {
         this.interfaceDeFin = new createjs.Bitmap(this.chargeur.getResult('interfaceFin'));
         this.stageJeu.addChild(this.interfaceDeFin);
         console.log(this.interfaceDeFin);
-        this.interfaceDeFin.scaleX = 0.3;
-        this.interfaceDeFin.scaleY = 0.3;
+        // this.interfaceDeFin.scaleX = 0.3;
+        // this.interfaceDeFin.scaleY = 0.3;
 
         setTimeout(() => {
             location.reload(true);

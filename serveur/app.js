@@ -78,7 +78,12 @@ function gererNouvelleInterface(socket) {
 
       socket.on("connection", message => {
           jeux.forEach(jeu => jeu.emit("connection1", message))
-      })
+      });
+
+
+      socket.on("finJeu", message => {
+          interfaces[0].emit("redirect", {type: "redirect", message});
+      });
 
 
 
@@ -91,21 +96,21 @@ function gererNouvelleInterface(socket) {
       socket.on("connection", message => {
           jeux.forEach(jeu => jeu.emit("connection2", message))
       });
-
+      socket.on("finJeu", message => {
+          interfaces[1].emit("redirect", {type: "redirect", message});
+      });
 
 
   } else {
     interfaces.push(socket);
   }
 
-  // Envoyer une mise à jour à toutes les interfaces pour identifer leur position dans la liste
-  interfaces.forEach((interface, index) => {
-    if (!interface) return;
-    interface.emit("position", {position: index})
-  });
+
 
   // Ajout d'un écouteur pour détecter la déconnexion d'une interface
   socket.on('disconnect', () => {
+
+    socket.emit("disconnected", socket);
 
     // Identification de l'index de l'interface qui vient de se déconnecter
     const index = interfaces.indexOf(socket);
@@ -121,10 +126,10 @@ function gererNouvelleInterface(socket) {
     }
 
     // Envoyer une mise à jour à toutes les interfaces pour identifer leur position dans la liste
-    interfaces.forEach((interface, index) => {
-      if (interface === null) return;
-      interface.emit("position", {position: index})
-    })
+      interfaces.forEach((interface, index) => {
+          if (!interface) return;
+          interface.emit("position", {position: index})
+      });
 
   })
 

@@ -19,6 +19,8 @@ export class Application {
         this.socket.on("connection1", this.ajoutRaquette1.bind(this));
         this.socket.on("connection2", this.ajoutRaquette2.bind(this));
 
+        this.socket.on("disconnected", this.disconnected.bind(this));
+
 
         this.canvas = document.getElementById("canvas");
         this.canvas2 = document.getElementById("canvas2");
@@ -81,8 +83,6 @@ export class Application {
         this.intro = document.querySelector("iframe");
 
 
-
-
         //76800
         //this.jouerMusiqueJeu();
 
@@ -93,7 +93,6 @@ export class Application {
 
 
     ajoutDecor() {
-
 
 
         this.decor = new createjs.Bitmap(this.chargeur.getResult('decor'), true);
@@ -124,13 +123,13 @@ export class Application {
 
         //this.vieJoueur1, this.vieJoueur2, ,
 
-        this.stageJeu.addChild(this.fondJeu, this.instruction );
+        this.stageJeu.addChild(this.fondJeu, this.instruction);
 
         this.instruction.scaleX = 0.7;
-            this.instruction.scaleY = 0.7;
+        this.instruction.scaleY = 0.7;
 
-            this.instruction.x = 120;
-            this.instruction.y = 10;
+        this.instruction.x = 120;
+        this.instruction.y = 10;
 
         this.phoneQr.scaleX = 0.5;
         this.phoneQr.scaleY = 0.5;
@@ -328,7 +327,7 @@ export class Application {
         this.stageJeu.addChild(this.raquette1);
 
 
-this.joueur1Connecte = true;
+        this.joueur1Connecte = true;
 
         this.surConnection();
 
@@ -376,7 +375,7 @@ this.joueur1Connecte = true;
                 this.stageJeu.removeChild(this.instruction);
 
 
-               this.intervalPerime = setInterval(this.creationBallePerime.bind(this), 5000);
+                this.intervalPerime = setInterval(this.creationBallePerime.bind(this), 5000);
                 this.intervalSaint = setInterval(this.creationBalleSaine.bind(this), 15000);
             }
 
@@ -451,7 +450,6 @@ this.joueur1Connecte = true;
     }
 
 
-
     creationBalleSaine() {
 
 
@@ -461,7 +459,7 @@ this.joueur1Connecte = true;
         // this.idSkinBalle = colorOptions(this.skinBalle)
 
 
-         if (this.skinBalle === 1) {
+        if (this.skinBalle === 1) {
             this.idSkinBalle = "tomate"
         }
 
@@ -525,7 +523,6 @@ this.joueur1Connecte = true;
     }
 
     mouvementJoueur2(e) {
-
 
 
         this.joueur2Connecte = true;
@@ -615,63 +612,128 @@ this.joueur1Connecte = true;
 
     }
 
-    augmenteVieJ1(){
-        if (this.vie_5_joueur1.vivant === false && this.vie_4_joueur1.vivant === true ){
+    augmenteVieJ1() {
+        if (this.vie_5_joueur1.vivant === false && this.vie_4_joueur1.vivant === true) {
             this.stage.addChild(this.vie_5_joueur1);
             this.vie_5_joueur1.vivant = true
         }
 
-       else if (this.vie_4_joueur1.vivant === false && this.vie_3_joueur1.vivant === true ){
+        else if (this.vie_4_joueur1.vivant === false && this.vie_3_joueur1.vivant === true) {
             this.stage.addChild(this.vie_4_joueur1);
             this.vie_4_joueur1.vivant = true
         }
 
-       else if (this.vie_3_joueur1.vivant === false && this.vie_2_joueur1.vivant === true ){
+        else if (this.vie_3_joueur1.vivant === false && this.vie_2_joueur1.vivant === true) {
             this.stage.addChild(this.vie_3_joueur1);
             this.vie_3_joueur1.vivant = true
         }
 
 
-        else if (this.vie_2_joueur1.vivant === false && this.vie_1_joueur1.vivant === true ){
+        else if (this.vie_2_joueur1.vivant === false && this.vie_1_joueur1.vivant === true) {
             this.stage.addChild(this.vie_2_joueur1);
             this.vie_2_joueur1.vivant = true
         }
 
 
-
     }
 
-    augmenteVieJ2(){
-        if (this.vie_5_joueur2.vivant === false && this.vie_4_joueur2.vivant === true ){
+    augmenteVieJ2() {
+        if (this.vie_5_joueur2.vivant === false && this.vie_4_joueur2.vivant === true) {
             this.stage.addChild(this.vie_5_joueur2);
             this.vie_5_joueur2.vivant = true
         }
 
-        else if (this.vie_4_joueur2.vivant === false && this.vie_3_joueur2.vivant === true ){
+        else if (this.vie_4_joueur2.vivant === false && this.vie_3_joueur2.vivant === true) {
             this.stage.addChild(this.vie_4_joueur2);
             this.vie_4_joueur2.vivant = true
         }
 
-        else if (this.vie_3_joueur2.vivant === false && this.vie_2_joueur2.vivant === true ){
+        else if (this.vie_3_joueur2.vivant === false && this.vie_2_joueur2.vivant === true) {
             this.stage.addChild(this.vie_3_joueur2);
             this.vie_3_joueur2.vivant = true
         }
 
 
-        else if (this.vie_2_joueur2.vivant === false && this.vie_1_joueur2.vivant === true ){
+        else if (this.vie_2_joueur2.vivant === false && this.vie_1_joueur2.vivant === true) {
             this.stage.addChild(this.vie_2_joueur2);
             this.vie_2_joueur2.vivant = true
         }
     }
 
 
-    endGame(){
+    endGame() {
 
         clearInterval(this.intervalPerime);
         clearInterval(this.intervalSaint);
         this.stageJeu.removeChild(this.balle);
 
         this.socket.emit("finJeu", {type: "finJeu",});
+
+        setTimeout(() => {
+            location.reload();
+        }, 76800);
+
+    }
+
+    // redemarrer() {
+    //     if (this.vie_5_joueur2.vivant === false) {
+    //         this.stage.addChild(this.vie_5_joueur2);
+    //         this.vie_5_joueur2.vivant = true
+    //     }
+    //
+    //     else if (this.vie_4_joueur2.vivant === false) {
+    //         this.stage.addChild(this.vie_4_joueur2);
+    //         this.vie_4_joueur2.vivant = true
+    //     }
+    //
+    //     else if (this.vie_3_joueur2.vivant === false) {
+    //         this.stage.addChild(this.vie_3_joueur2);
+    //         this.vie_3_joueur2.vivant = true
+    //     }
+    //
+    //
+    //     else if (this.vie_2_joueur2.vivant === false) {
+    //         this.stage.addChild(this.vie_2_joueur2);
+    //         this.vie_2_joueur2.vivant = true
+    //     }
+    //     else if (this.vie_1_joueur2.vivant === false) {
+    //         this.stage.addChild(this.vie_1_joueur2);
+    //         this.vie_1_joueur2.vivant = true
+    //     }
+    //
+    //
+    //
+    //     if (this.vie_5_joueur1.vivant === false) {
+    //         this.stage.addChild(this.vie_5_joueur1);
+    //         this.vie_5_joueur1.vivant = true
+    //     }
+    //
+    //     else if (this.vie_4_joueur1.vivant === false) {
+    //         this.stage.addChild(this.vie_4_joueur1);
+    //         this.vie_4_joueur1.vivant = true
+    //     }
+    //
+    //     else if (this.vie_3_joueur1.vivant === false) {
+    //         this.stage.addChild(this.vie_3_joueur1);
+    //         this.vie_3_joueur1.vivant = true
+    //     }
+    //
+    //
+    //     else if (this.vie_2_joueur1.vivant === false) {
+    //         this.stage.addChild(this.vie_2_joueur1);
+    //         this.vie_2_joueur1.vivant = true
+    //     }
+    //     else if (this.vie_1_joueur1.vivant === false) {
+    //         this.stage.addChild(this.vie_1_joueur1);
+    //         this.vie_1_joueur1.vivant = true
+    //     }
+    //
+    //
+    //
+    // }
+
+
+    disconnected(e){
 
     }
 }

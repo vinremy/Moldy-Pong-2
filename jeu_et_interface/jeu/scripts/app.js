@@ -707,7 +707,7 @@ export class Application {
         this.interfaceDeFin.scaleY = 0.3;
 
         setTimeout(() => {
-            location.reload();
+            location.reload(true);
 
         }, 25000);
 

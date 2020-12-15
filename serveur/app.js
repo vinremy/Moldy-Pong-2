@@ -138,7 +138,7 @@ function gererNouveauJeu(socket) {
 
     console.log("Connexion d'une page web de jeu");
 
-    if (jeux.length < 0){
+
         jeux.push(socket);
 
         socket.on('disconnect', () => {
@@ -148,11 +148,9 @@ function gererNouveauJeu(socket) {
 
 
         socket.on("finJeu", finDeJeu);
-    }
 
-    else {
 
-    }
+   
 
 
 

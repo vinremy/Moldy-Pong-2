@@ -70,20 +70,10 @@ export class Application {
         }, 79800);
 
         // POUR SKIPPER L'INTRO?
-        // this.boutonSkip = new createjs.Bitmap(this.chargeur.getResult('boutSkip'), false)
-        // // this.boutonSkip.x = position à voir;
-        // // this.boutonSkip.y = position à voir;
-        // this.stage.addChild(this.boutonSkip);
+
         //
         //
-        // if (this.boutonSkip === true) {
-        //     clearTimeout(this.timeoutIntro)
-        //     this.intro.style.display = "none";
-        //     this.ajoutDecor();
-        //     this.jouerMusiqueMenu();
-        //     this.boutonSkip.display = "none";
-        //
-        // }
+
 
     }
 
@@ -97,10 +87,29 @@ export class Application {
 
         this.intro = document.querySelector("iframe");
 
+        console.log(this.canvas.width, this.canvas.height)
+
+        this.boutonSkip = new createjs.Bitmap(this.chargeur.getResult('boutSkip'), false);
+        this.boutonSkip.x = 1100;
+        this.boutonSkip.y = 800;
+        this.stage.addChild(this.boutonSkip);
+
+        this.boutonSkip.scaleX = 0.5;
+        this.boutonSkip.scaleY = 0.5;
 
 
-        //76800
-        //this.jouerMusiqueJeu();
+        this.boutonSkip.addEventListener('click', () => {
+
+this.intro.contentWindow.postMessage('{"method":"setVolume", "value":0}','*');
+            clearTimeout(this.timeoutIntro);
+            this.intro.style.display = "none";
+            this.ajoutDecor();
+            this.jouerMusiqueMenu();
+            this.stage.removeChild(this.boutonSkip)
+        });
+
+
+        // this.jouerMusiqueJeu();
 
 
         // this.serveur = new Serveur(this.raquette1, this.raquette2);
@@ -759,7 +768,7 @@ export class Application {
     // }
 
 
-    disconnected(e){
+    disconnected(e) {
 
     }
 }

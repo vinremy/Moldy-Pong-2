@@ -4,7 +4,7 @@
 
 
     {"id": "decor",  "src": "ressources/images/background.png"},
-    {"id": "intro",  "src": "ressources/images/introHD.mp4"},
+
     {"id": "instruction",  "src": "ressources/images/instruction.png"},
     {"id" : "boutSkip", "src": "ressources/images/skip.png"},
 

@@ -1,20 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="73f3d030-9446-4c2f-9964-5fe33ca9ce1e" name="Default Changelist" comment="musiq">
+=======
+    <list default="true" id="73f3d030-9446-4c2f-9964-5fe33ca9ce1e" name="Default Changelist" comment="Réparer">
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/tomate.js" beforeDir="false" afterPath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/tomate.js" afterDir="false" />
     </list>
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="rejouer.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jeu_et_interface/interface/rejouer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="7" lean-forward="true" selection-end-line="35" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="innactif.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jeu_et_interface/interface/innactif.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jeu_et_interface/interface/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="628" column="5" lean-forward="true" selection-start-line="628" selection-start-column="5" selection-end-line="628" selection-end-column="5" />
+              <folding>
+                <element signature="e#17803#17820#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/serveur/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1608">
+              <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/manifest.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="poele.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/poele.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="poeleJeu.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/poeleJeu.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="interfacefin.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/interfacefin.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="interface.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jeu_et_interface/interface/scripts/interface.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="78" column="84" selection-start-line="78" selection-start-column="79" selection-end-line="78" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>aler</find>
+      <find>this.raquette1.x =</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/jeu_et_interface/jeu/ressources/manifest.json" />
+        <option value="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="ProjectId" id="1kqbIy6nNOVbjJ61UMl0dfUwX0h" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_et_interface" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_et_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="interface" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_et_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="interface" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_et_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="interface" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_et_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_et_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu" type="462c0819:PsiDirectoryNode" />
+              <item name="ressources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_et_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu" type="462c0819:PsiDirectoryNode" />
+              <item name="ressources" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_et_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu_et_interface" type="462c0819:PsiDirectoryNode" />
+              <item name="jeu" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="interface.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Moldy-Pong-2" type="462c0819:PsiDirectoryNode" />
+              <item name="serveur" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,20 +224,33 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Mandy\Desktop\moldy\jeu_et_interface\jeu\ressources\sons\sfx" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mandy\Desktop\moldy\jeu_et_interface\jeu\ressources\sons" />
       <recent name="C:\Users\Mandy\Desktop\moldy\jeu_et_interface\jeu\ressources" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mandy\Desktop\moldy\jeu_et_interface\jeu\ressources\sons\sfx" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
-    <configuration name="NW.js" type="NodeWebKit" factoryName="NW.js" exePath="$PROJECT_DIR$/../nwjs-sdk-v0.48.2-win-x64/nw.exe" inputPath="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
+    <configuration name="NW.js" type="NodeWebKit" factoryName="NW.js" exePath="$PROJECT_DIR$/../nwjs-sdk-v0.48.2-win-x64/nw.exe" inputPath="$PROJECT_DIR$" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="73f3d030-9446-4c2f-9964-5fe33ca9ce1e" name="Default Changelist" comment="" />
@@ -98,6 +308,32 @@
     <option name="localTasksCounter" value="6" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="5058000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2065332" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
@@ -108,5 +344,127 @@
     <MESSAGE value="Ajout des sons pour les raquettes" />
     <MESSAGE value="Réparer timeout musique d'intro" />
     <option name="LAST_COMMIT_MESSAGE" value="Réparer timeout musique d'intro" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/chouxMoldy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/radisMoldy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/spatule.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/Joueur2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/oignon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/oignonMoldy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/styles/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/skip.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serveur/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/scripts/tomate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="35" column="148" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="35" selection-end-column="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/interface/styles/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="514" column="1" lean-forward="true" selection-start-line="514" selection-start-column="1" selection-end-line="514" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/interface/rejouer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="7" lean-forward="true" selection-end-line="35" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/interface/innactif.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/interfacefin.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/interface/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serveur/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1608">
+          <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/interface/scripts/interface.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="78" column="84" selection-start-line="78" selection-start-column="79" selection-end-line="78" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/poele.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/ressources/images/poeleJeu.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="628" column="5" lean-forward="true" selection-start-line="628" selection-start-column="5" selection-end-line="628" selection-end-column="5" />
+          <folding>
+            <element signature="e#17803#17820#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

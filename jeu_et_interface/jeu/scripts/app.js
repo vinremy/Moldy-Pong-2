@@ -354,6 +354,10 @@ export class Application {
             this.raquette1.x = 60
         }
 
+        else{
+            this.raquette1.scaleX = 0.7;
+        }
+
         this.stageJeu.addChild(this.raquette1);
 
 
@@ -403,8 +407,9 @@ export class Application {
                 this.jeuDemarrer = true;
 
                 this.arretMusique();
-                setTimeout(() => {this.jouerMusiqueJeu();},10);
+                // setTimeout(() => {this.jouerMusiqueJeu();},10);
 
+                this.jouerMusiqueJeu();
                 this.stageJeu.removeChild(this.instruction);
 
 

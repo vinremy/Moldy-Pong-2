@@ -671,7 +671,7 @@ export class Application {
 
         setTimeout(() => {
             location.reload();
-        }, 76800);
+        }, 25000);
 
     }
 

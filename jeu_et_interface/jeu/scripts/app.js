@@ -712,7 +712,7 @@ export class Application {
         console.log(this.interfaceDeFin);
 
         setTimeout(() => {
-            location.reload();
+            location.reload(true);
 
         }, 25000);
 

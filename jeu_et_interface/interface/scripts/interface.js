@@ -10,6 +10,7 @@ export class Interface {
 
         this.removeEvent = false;
 
+        this.inactif = true;
 
 
 
@@ -30,13 +31,18 @@ console.log("test");
 
             console.log(message.position);
 
+
+
             if (message.position === 1 || message.position === 0){
                 this.fenetreListe.style.display = "none";
                 this.fenetreRaquette.style.display = "block";
 
-                this.timeoutInnactive = setTimeout(() => {
-                    this.innactive();
-                }, 79800);
+                if (this.inactif === true){
+                    this.timeoutInnactive = setTimeout(() => {
+                        this.innactive();
+                    }, 79800);
+                }
+
 
             }
 
@@ -55,7 +61,8 @@ console.log("test");
 
         // Vérifier si les événements d'orientation sont disponibles sur cette plateforme
 
-
+        clearTimeout(this.timeoutInnactive);
+        this.inactif = false;
 
         if (this.removeEvent === false) {
 
@@ -93,6 +100,8 @@ console.log("test");
 
     autoriser2(e) {
 
+        clearTimeout(this.timeoutInnactive);
+        this.inactif = false;
         // Vérifier si les événements d'orientation sont disponibles sur cette plateforme
 
 
@@ -134,6 +143,8 @@ console.log("test");
 
     autoriser3(e) {
 
+        clearTimeout(this.timeoutInnactive);
+        this.inactif = false;
         // Vérifier si les événements d'orientation sont disponibles sur cette plateforme
 
 
@@ -175,7 +186,7 @@ console.log("test");
 
 
         this.socket.emit("mouvement", {type: "mouvement", alpha: e.alpha, beta: e.beta, gamma: e.gamma});
-        clearTimeout(this.timeoutInnactive);
+
 
     }
 

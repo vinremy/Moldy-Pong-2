@@ -21,7 +21,7 @@ export class Interface {
         document.querySelector(".btnAutorise3").addEventListener("click", this.autoriser3.bind(this));
 
         this.fenetreListe = document.querySelector(".file-attente");
-        this.fenetreRaquette = document.querySelector(".containerToutSlide");
+        this.fenetreRaquette = document.querySelector(".cacher");
 
 console.log("test");
 

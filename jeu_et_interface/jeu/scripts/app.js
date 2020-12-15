@@ -100,9 +100,10 @@ export class Application {
 
         this.boutonSkip.addEventListener('click', () => {
 
-this.intro.contentWindow.postMessage('{"method":"setVolume", "value":0}','*');
+
             clearTimeout(this.timeoutIntro);
-            this.intro.style.display = "none";
+            // this.intro.style.display = "none";
+            this.intro.remove();
             this.ajoutDecor();
             this.jouerMusiqueMenu();
             this.stage.removeChild(this.boutonSkip)

@@ -335,19 +335,13 @@ export class Application {
 
         // });
 
-        console.log(e.raquette);
-        if (e.raquette === "poele"){
-            this.raquette1.scaleX = -0.7;
-        }
-        else{
-            this.raquette1.scaleX = 0.7;
-        }
+        
 
         this.raquette1 = new Raquette(this.chargeur, e.raquette);
 
         // this.raquette1 = new Raquette(this.chargeur, "spatule" );
-      
 
+        this.raquette1.scaleX = 0.7;
         this.raquette1.scaleY = 0.7;
 
         this.stageJeu.addChild(this.raquette1);

@@ -615,6 +615,16 @@ export class Application {
 
             this.arretMusique();
             this.jouerMusiqueFin();
+
+            this.gagnant = new createjs.Bitmap(this.chargeur.getResult('succes'))
+            this.gagnant.x = 500;
+            this.gagnant.y = 200;
+            this.stageJeu.addChild(this.gagnant);
+
+            this.perdant = new createjs.Bitmap(this.chargeur.getResult('faillite'))
+            this.perdant.x = 500;
+            this.perdant.y = 200;
+            this.stageJeu.addChild(this.perdant);
         }
 
 
@@ -655,6 +665,12 @@ export class Application {
             this.gagnant.x = 500;
             this.gagnant.y = 200;
             this.stageJeu.addChild(this.gagnant);
+
+            this.perdant = new createjs.Bitmap(this.chargeur.getResult('faillite'))
+            this.perdant.x = 500;
+            this.perdant.y = 200;
+            this.stageJeu.addChild(this.perdant);
+
         }
 
 

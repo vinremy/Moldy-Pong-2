@@ -349,7 +349,7 @@ export class Application {
 
         this.raquette1.scaleY = 0.7;
 
-        if (e.raquette === "poele") {
+        if (e.raquette === "poele" || e.raquette ==="spatule") {
             this.raquette1.scaleX = -0.7;
             this.raquette1.x = 60
         }

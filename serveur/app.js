@@ -150,7 +150,7 @@ function gererNouveauJeu(socket) {
         socket.on("finJeu", finDeJeu);
 
 
-   
+
 
 
 

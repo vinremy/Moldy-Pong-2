@@ -335,7 +335,7 @@ export class Application {
 
         // });
 
-        
+
 
         this.raquette1 = new Raquette(this.chargeur, e.raquette);
 
@@ -343,6 +343,11 @@ export class Application {
 
         this.raquette1.scaleX = 0.7;
         this.raquette1.scaleY = 0.7;
+
+        if (e.raquette === "poele") {
+            this.raquette1.scaleX = -0.7;
+            this.raquette1.x = 60
+        }
 
         this.stageJeu.addChild(this.raquette1);
 

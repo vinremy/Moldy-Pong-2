@@ -14,10 +14,11 @@
     {"id": "oignon",  "src": "ressources/images/oignon.png"},
     {"id": "patate",  "src": "ressources/images/patate.png"},
     {"id": "radis",  "src": "ressources/images/radis.png"},
+    {"id": "poele",  "src": "ressources/images/poeleJeu.png"},
 
 
 
-    {"id": "poele",  "src": "ressources/images/poele.png"},
+    {"id": "poeleMenu",  "src": "ressources/images/poele.png"},
     {"id": "rouleau",  "src": "ressources/images/rouleau.png"},
     {"id": "spatule",  "src": "ressources/images/spatule.png"},
 

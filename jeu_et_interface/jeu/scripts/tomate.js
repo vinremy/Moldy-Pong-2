@@ -32,8 +32,8 @@ export class Tomate extends createjs.Bitmap {
 
         this.min2 = Math.ceil(0);
 
-        this.directionX = Math.floor(Math.random() * Math.floor(this.max - this.min) + this.min) * ((Math.floor(Math.random() - 0.5) * 2) + 1);
-        this.directionY = Math.floor(Math.random() * Math.floor(this.max - this.min2) + this.min2) * ((Math.floor(Math.random() - 0.5) * 2) + 1);
+        // this.directionX = Math.floor(Math.random() * Math.floor(this.max - this.min) + this.min) * ((Math.floor(Math.random() - 0.5) * 2) + 1);
+        // this.directionY = Math.floor(Math.random() * Math.floor(this.max - this.min2) + this.min2) * ((Math.floor(Math.random() - 0.5) * 2) + 1);
 
         createjs.Ticker.addEventListener("tick", this.deplacerBalle.bind(this));
 

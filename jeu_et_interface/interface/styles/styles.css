@@ -280,6 +280,11 @@ button {
     border-radius: 50%;
 }
 
+.carousel__viewport{
+    position: absolute;
+    top: 110px;
+    left: 26px;
+}
 
 /*----------------------------------------*/
 /* File d'attente
@@ -480,6 +485,8 @@ button {
         padding: 20% 80px;
         font-size: 7rem;
     }
+
+    .carousel__viewport{top: 100px;}
 }
 
 @media only screen and (max-height: 530px) {
@@ -495,6 +502,8 @@ button {
         padding: 15% 80px;
         font-size: 6rem;
     }
+
+    .carousel__viewport{top: 90px;}
 }
 
 .containerToutSlide{

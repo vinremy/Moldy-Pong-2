@@ -35,7 +35,9 @@ export class Application {
         this.joueur2Connecte = false;
         this.musiqueBefore = null;
         this.musiqueLoop = null;
-        this.timeoutIntro = null;
+        this.timeOutIntro = null;
+        this.intro = null;
+
 
         this.jeuDemarrer = false
 
@@ -63,11 +65,7 @@ export class Application {
         this.pointsJ1 = 0;
         this.pointsJ2 = 0;
 
-        this.timeoutIntro = setTimeout(() => {
-            this.intro.style.display = "none";
-            this.ajoutDecor();
-            this.jouerMusiqueMenu();
-        }, 81000);
+
 
     }
 
@@ -76,12 +74,27 @@ export class Application {
         alert(e.data.src);
     }
 
+
+
+
     demarrer() {
         console.log("jeu demarrer");
 
         this.intro = document.querySelector("iframe");
 
-        console.log(this.canvas.width, this.canvas.height)
+        this.btnSkip();
+
+        this.timeOutIntro = setTimeout(() => {
+            this.intro.style.display = "none";
+            this.ajoutDecor();
+            this.jouerMusiqueMenu();
+        }, 2000);
+
+        //console.log(this.canvas.width, this.canvas.height)
+
+    }
+
+    btnSkip(){
 
         this.boutonSkip = new createjs.Bitmap(this.chargeur.getResult('boutSkip'), false);
         this.boutonSkip.x = 1100;
@@ -94,22 +107,13 @@ export class Application {
 
         this.boutonSkip.addEventListener('click', () => {
 
-
-            clearTimeout(this.timeoutIntro);
-            this.timeoutIntro = null;
-            // this.intro.style.display = "none";
+            clearTimeout(this.timeOutIntro);
             this.intro.remove();
             this.ajoutDecor();
             this.jouerMusiqueMenu();
-            this.stage.removeChild(this.boutonSkip)
+            this.stage.removeChild(this.boutonSkip);
+
         });
-
-
-        // this.jouerMusiqueJeu();
-
-
-        // this.serveur = new Serveur(this.raquette1, this.raquette2);
-        // this.serveur.demarrer();
     }
 
 
@@ -335,13 +339,7 @@ export class Application {
 
         // });
 
-        console.log(e.raquette);
-        if (e.raquette === "poele"){
-            this.raquette1.scaleX = -0.7;
-        }
-        else{
-            this.raquette1.scaleX = 0.7;
-        }
+
 
         this.raquette1 = new Raquette(this.chargeur, e.raquette);
 
@@ -350,6 +348,11 @@ export class Application {
 
 
         this.raquette1.scaleY = 0.7;
+
+        if (e.raquette === "poele") {
+            this.raquette1.scaleX = -0.7;
+            this.raquette1.x = 60
+        }
 
         this.stageJeu.addChild(this.raquette1);
 
@@ -654,6 +657,7 @@ export class Application {
 
 
     }
+
 
     augmenteVieJ1() {
         if (this.vie_5_joueur1.vivant === false && this.vie_4_joueur1.vivant === true) {

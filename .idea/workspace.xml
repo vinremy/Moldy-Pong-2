@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73f3d030-9446-4c2f-9964-5fe33ca9ce1e" name="Default Changelist" comment="">
+    <list default="true" id="73f3d030-9446-4c2f-9964-5fe33ca9ce1e" name="Default Changelist" comment="Réparer">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/tomate.js" beforeDir="false" afterPath="$PROJECT_DIR$/jeu_et_interface/jeu/scripts/tomate.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/jeu_et_interface/jeu/ressources/sons/sfx" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -57,6 +59,7 @@
       <workItem from="1607623050092" duration="3880000" />
       <workItem from="1608030758184" duration="210000" />
       <workItem from="1608043513871" duration="2837000" />
+      <workItem from="1608050832030" duration="6790000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout des fonctions pour la musique">
       <created>1607445033720</created>
@@ -79,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607626940732</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ajout des sons pour les raquettes">
+      <created>1608050877122</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608050877122</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +99,7 @@
     <MESSAGE value="Ajout des fonctions pour la musique" />
     <MESSAGE value="intégration des effets sonores" />
     <MESSAGE value="clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up" />
+    <MESSAGE value="Ajout des sons pour les raquettes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des sons pour les raquettes" />
   </component>
 </project>

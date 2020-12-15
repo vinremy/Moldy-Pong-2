@@ -67,13 +67,17 @@ export class Application {
             this.intro.style.display = "none";
             this.ajoutDecor();
             this.jouerMusiqueMenu();
-        }, 76800);
+        }, 79800);
 
         // POUR SKIPPER L'INTRO?
         // this.boutonSkip = new createjs.Bitmap(this.chargeur.getResult('boutSkip'), false)
         //
         // if (this.boutonSkip === true) {
         //     clearTimeout(this.timeoutIntro)
+        //     this.intro.style.display = "none";
+        //     this.ajoutDecor();
+        //     this.jouerMusiqueMenu();
+        //    
         // }
 
     }

@@ -573,19 +573,24 @@ export class Application {
 
         if (this.vie_5_joueur1.vivant === true) {
             this.vie_5_joueur1.vivant = false;
+            this.jouerManque();
             this.stage.removeChild(this.vie_5_joueur1)
 
         } else if (this.vie_4_joueur1.vivant === true) {
             this.vie_4_joueur1.vivant = false;
+            this.jouerManque();
             this.stage.removeChild(this.vie_4_joueur1)
         } else if (this.vie_3_joueur1.vivant === true) {
             this.vie_3_joueur1.vivant = false;
+            this.jouerManque();
             this.stage.removeChild(this.vie_3_joueur1)
         } else if (this.vie_2_joueur1.vivant === true) {
             this.vie_2_joueur1.vivant = false;
+            this.jouerManque();
             this.stage.removeChild(this.vie_2_joueur1)
         } else if (this.vie_1_joueur1.vivant === true) {
             this.vie_1_joueur1.vivant = false;
+            this.jouerManque();
             this.stage.removeChild(this.vie_1_joueur1);
 
             // appeler fin
@@ -603,19 +608,24 @@ export class Application {
 
         if (this.vie_5_joueur2.vivant === true) {
             this.vie_5_joueur2.vivant = false;
+            this.jouerManque();
             this.stage.removeChild(this.vie_5_joueur2)
 
         } else if (this.vie_4_joueur2.vivant === true) {
             this.vie_4_joueur2.vivant = false;
+            this.jouerManque();
             this.stage.removeChild(this.vie_4_joueur2)
         } else if (this.vie_3_joueur2.vivant === true) {
             this.vie_3_joueur2.vivant = false;
+            this.jouerManque();
             this.stage.removeChild(this.vie_3_joueur2)
         } else if (this.vie_2_joueur2.vivant === true) {
             this.vie_2_joueur2.vivant = false;
+            this.jouerManque();
             this.stage.removeChild(this.vie_2_joueur2)
         } else if (this.vie_1_joueur2.vivant === true) {
             this.vie_1_joueur2.vivant = false;
+            this.jouerManque();
             this.stage.removeChild(this.vie_1_joueur2);
 
             // appeler fin

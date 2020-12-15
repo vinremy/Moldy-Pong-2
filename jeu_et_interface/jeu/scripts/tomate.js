@@ -53,6 +53,7 @@ console.log(this.y)
 
         if (this.collision || this.collision2) {
             console.log("collision");
+            this.jouerFrappe();
 
             if (this.rebond === true) {
                 this.directionX = -this.directionX;
@@ -124,6 +125,20 @@ console.log(this.y)
 
         this.x = this.canvas.width / 2;
         this.y = -500;
+    }
+
+    jouerFrappe() {
+
+        let h = Math.ceil(Math.random() * 5);
+        setTimeout(() => {
+            createjs.Sound.play("foodHit" + h);
+        }, 100)
+
+
+        let w = Math.ceil(Math.random() * 5)
+        createjs.Sound.play("woosh" + w);
+
+        //console.log(w, h)
     }
 
 

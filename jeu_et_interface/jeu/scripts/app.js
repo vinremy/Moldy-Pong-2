@@ -88,7 +88,7 @@ export class Application {
             this.intro.style.display = "none";
             this.ajoutDecor();
             this.jouerMusiqueMenu();
-        }, 2000);
+        }, 81000);
 
         //console.log(this.canvas.width, this.canvas.height)
 

@@ -63,12 +63,18 @@ export class Application {
         this.pointsJ1 = 0;
         this.pointsJ2 = 0;
 
-        setTimeout(() => {
+        this.timeoutIntro = setTimeout(() => {
             this.intro.style.display = "none";
             this.ajoutDecor();
             this.jouerMusiqueMenu();
         }, 76800);
 
+        // POUR SKIPPER L'INTRO?
+        // this.boutonSkip = new createjs.Bitmap(this.chargeur.getResult('boutSkip'), false)
+        //
+        // if (this.boutonSkip === true) {
+        //     clearTimeout(this.timeoutIntro)
+        // }
 
     }
 
@@ -81,6 +87,7 @@ export class Application {
         console.log("jeu demarrer");
 
         this.intro = document.querySelector("iframe");
+
 
 
         //76800

@@ -346,7 +346,8 @@ export class Application {
         this.raquette1 = new Raquette(this.chargeur, e.raquette);
 
         // this.raquette1 = new Raquette(this.chargeur, "spatule" );
-      
+
+
 
         this.raquette1.scaleY = 0.7;
 
@@ -644,6 +645,11 @@ export class Application {
             this.jouerMusiqueFin();
 
             this.endGame();
+
+            this.gagnant = new createjs.Bitmap(this.chargeur.getResult('succes'))
+            this.gagnant.x = 500;
+            this.gagnant.y = 200;
+            this.stageJeu.addChild(this.gagnant);
         }
 
 
@@ -711,31 +717,7 @@ export class Application {
         this.stageJeu.addChild(this.interfaceDeFin);
         console.log(this.interfaceDeFin);
 
-        this.vie_1_joueur1.y = 500;
-        // this.vie_2_joueur1.y = 105;
-        // this.vie_3_joueur1.y = 105;
-        // this.vie_4_joueur1.y = 105;
-        // this.vie_5_joueur1.y = 105;
 
-
-        this.vie_1_joueur1.x = 400;
-        this.vie_2_joueur1.x = 440;
-        this.vie_3_joueur1.x = 480;
-        this.vie_4_joueur1.x = 520;
-        this.vie_5_joueur1.x = 560;
-
-        this.vie_1_joueur2.y = 500;
-        // this.vie_2_joueur2.y = 105;
-        // this.vie_3_joueur2.y = 105;
-        // this.vie_4_joueur2.y = 105;
-        // this.vie_5_joueur2.y = 105;
-
-
-        this.vie_1_joueur2.x = 720;
-        this.vie_2_joueur2.x = 760;
-        this.vie_3_joueur2.x = 800;
-        this.vie_4_joueur2.x = 840;
-        this.vie_5_joueur2.x = 880;
 
         setTimeout(() => {
             location.reload(true);

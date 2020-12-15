@@ -21,9 +21,10 @@ export class Interface {
         document.querySelector(".btnAutorise3").addEventListener("click", this.autoriser3.bind(this));
 
         this.fenetreListe = document.querySelector(".file-attente");
-        this.fenetreRaquette = document.querySelector(".cacher");
+        this.fenetreRaquette = document.querySelector(".containerToutSlide");
+        this.logo = document.querySelector(".logo");
 
-console.log("test");
+            console.log("test");
 
         this.socket.on("redirect", this.redirect.bind(this));
 
@@ -36,6 +37,7 @@ console.log("test");
             if (message.position === 1 || message.position === 0){
                 this.fenetreListe.style.display = "none";
                 this.fenetreRaquette.style.display = "block";
+                this.logo.style.display = "block";
 
                 if (this.inactif === true){
                     this.timeoutInnactive = setTimeout(() => {
@@ -51,6 +53,7 @@ console.log("test");
 
                 this.fenetreListe.style.display = "block";
                 this.fenetreRaquette.style.display = "none";
+                this.logo.style.display = "none";
             }
         });
 

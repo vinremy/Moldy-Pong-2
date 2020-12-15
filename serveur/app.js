@@ -105,7 +105,10 @@ function gererNouvelleInterface(socket) {
     interfaces.push(socket);
   }
 
-
+    interfaces.forEach((interface, index) => {
+        if (!interface) return;
+        interface.emit("position", {position: index})
+    })
 
   // Ajout d'un écouteur pour détecter la déconnexion d'une interface
   socket.on('disconnect', () => {
@@ -127,10 +130,9 @@ function gererNouvelleInterface(socket) {
 
     // Envoyer une mise à jour à toutes les interfaces pour identifer leur position dans la liste
       interfaces.forEach((interface, index) => {
-          if (!interface) return;
+          if (interface === null) return;
           interface.emit("position", {position: index})
-      });
-
+      })
   })
 
 

@@ -22,15 +22,17 @@ export class Interface {
         this.fenetreListe = document.querySelector(".file-attente");
         this.fenetreRaquette = document.querySelector(".containerToutSlide");
 
+console.log("test");
 
         this.socket.on("redirect", this.redirect.bind(this));
 
         this.socket.on("position", message => {
 
+            console.log(message.position);
 
             if (message.position === 1 || message.position === 0){
                 this.fenetreListe.style.display = "none";
-                this.fenetreRaquette.style.display = "flex";
+                this.fenetreRaquette.style.display = "block";
 
                 this.timeoutInnactive = setTimeout(() => {
                     this.innactive();
@@ -40,7 +42,8 @@ export class Interface {
 
             else{
                 document.getElementById("position").innerText = message.position;
-                this.fenetreListe.style.display = "flex";
+
+                this.fenetreListe.style.display = "block";
                 this.fenetreRaquette.style.display = "none";
             }
         });

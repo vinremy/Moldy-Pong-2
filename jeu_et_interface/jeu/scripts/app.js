@@ -401,7 +401,9 @@ export class Application {
             if (this.joueur1Connecte === true && this.joueur2Connecte === true) {
 
                 this.jeuDemarrer = true;
-                this.jouerMusiqueJeu();
+
+                this.arretMusique();
+                setTimeout(() => {this.jouerMusiqueJeu();},10);
 
                 this.stageJeu.removeChild(this.instruction);
 

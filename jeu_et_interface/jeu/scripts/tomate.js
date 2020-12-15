@@ -138,7 +138,6 @@ console.log(this.y)
         let w = Math.ceil(Math.random() * 5)
         createjs.Sound.play("woosh" + w);
 
-        //console.log(w, h)
     }
 
 

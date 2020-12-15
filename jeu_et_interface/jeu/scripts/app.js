@@ -614,14 +614,14 @@ export class Application {
             this.arretMusique();
             this.jouerMusiqueFin();
 
-            this.gagnant = new createjs.Bitmap(this.chargeur.getResult('succes'))
-            this.gagnant.x = 500;
-            this.gagnant.y = 200;
+            this.gagnant = new createjs.Bitmap(this.chargeur.getResult('faillite'));
+            this.gagnant.x = 240;
+            this.gagnant.y = 290;
             this.stageJeu.addChild(this.gagnant);
 
-            this.perdant = new createjs.Bitmap(this.chargeur.getResult('faillite'))
-            this.perdant.x = 500;
-            this.perdant.y = 200;
+            this.perdant = new createjs.Bitmap(this.chargeur.getResult('succes'));
+            this.perdant.x = 770;
+            this.perdant.y = 300;
             this.stageJeu.addChild(this.perdant);
         }
 
@@ -629,6 +629,9 @@ export class Application {
     }
 
     augmenterPointJ1() {
+
+
+
 
 
         if (this.vie_5_joueur2.vivant === true) {
@@ -658,15 +661,14 @@ export class Application {
             this.jouerMusiqueFin();
 
             this.endGame();
-
-            this.gagnant = new createjs.Bitmap(this.chargeur.getResult('succes'))
-            this.gagnant.x = 500;
-            this.gagnant.y = 200;
+            this.gagnant = new createjs.Bitmap(this.chargeur.getResult('succes'));
+            this.gagnant.x = 240;
+            this.gagnant.y = 290;
             this.stageJeu.addChild(this.gagnant);
 
             this.perdant = new createjs.Bitmap(this.chargeur.getResult('faillite'))
-            this.perdant.x = 500;
-            this.perdant.y = 200;
+            this.perdant.x = 770;
+            this.perdant.y = 300;
             this.stageJeu.addChild(this.perdant);
 
         }
